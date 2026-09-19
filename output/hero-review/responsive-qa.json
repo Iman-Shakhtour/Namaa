@@ -1,0 +1,191 @@
+[
+  {
+    "buttonTargets": [
+      {
+        "height": 49.60000228881836,
+        "label": "شاهد نماء",
+        "width": 272.8000183105469
+      },
+      {
+        "height": 49.60000228881836,
+        "label": "اكتشف المميزات",
+        "width": 272.8000183105469
+      }
+    ],
+    "chrome": 0,
+    "columns": "272.8px",
+    "contentWidth": 272.8000183105469,
+    "descriptionLines": 2,
+    "gap": "24px",
+    "heroHeight": 532.1500244140625,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero-640.webp",
+    "imageWidth": 271.20001220703125,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "28px",
+    "titleLines": 2,
+    "width": 320
+  },
+  {
+    "buttonTargets": [
+      {
+        "height": 73.5999984741211,
+        "label": "شاهد نماء",
+        "width": 151.40000915527344
+      },
+      {
+        "height": 73.5999984741211,
+        "label": "اكتشف المميزات",
+        "width": 151.40000915527344
+      }
+    ],
+    "chrome": 0,
+    "columns": "312.8px",
+    "contentWidth": 312.8000183105469,
+    "descriptionLines": 2,
+    "gap": "24px",
+    "heroHeight": 515.7000122070312,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero-640.webp",
+    "imageWidth": 311.20001220703125,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "28.8px",
+    "titleLines": 2,
+    "width": 360
+  },
+  {
+    "buttonTargets": [
+      {
+        "height": 49.60000228881836,
+        "label": "شاهد نماء",
+        "width": 166.60000610351562
+      },
+      {
+        "height": 49.60000228881836,
+        "label": "اكتشف المميزات",
+        "width": 166.60000610351562
+      }
+    ],
+    "chrome": 0,
+    "columns": "343.2px",
+    "contentWidth": 343.20001220703125,
+    "descriptionLines": 2,
+    "gap": "24px",
+    "heroHeight": 510.6625061035156,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero-640.webp",
+    "imageWidth": 341.6000061035156,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "31.232px",
+    "titleLines": 2,
+    "width": 390
+  },
+  {
+    "buttonTargets": [
+      {
+        "height": 49.60000228881836,
+        "label": "شاهد نماء",
+        "width": 182.6000061035156
+      },
+      {
+        "height": 49.60000228881836,
+        "label": "اكتشف المميزات",
+        "width": 182.6000061035156
+      }
+    ],
+    "chrome": 0,
+    "columns": "375.2px",
+    "contentWidth": 375.2000122070313,
+    "descriptionLines": 1,
+    "gap": "24px",
+    "heroHeight": 508.3625183105469,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero-640.webp",
+    "imageWidth": 373.6000061035156,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "34.432px",
+    "titleLines": 2,
+    "width": 430
+  },
+  {
+    "buttonTargets": [
+      {
+        "height": 49.60000228881836,
+        "label": "شاهد نماء",
+        "width": 144.83750915527344
+      },
+      {
+        "height": 49.60000228881836,
+        "label": "اكتشف المميزات",
+        "width": 158.3125
+      }
+    ],
+    "chrome": 0,
+    "columns": "688.8px",
+    "contentWidth": 688.7999877929688,
+    "descriptionLines": 1,
+    "gap": "24px",
+    "heroHeight": 655.6875,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero.webp",
+    "imageWidth": 687.2000122070312,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "36px",
+    "titleLines": 2,
+    "width": 768
+  },
+  {
+    "buttonTargets": [
+      {
+        "height": 49.60000228881836,
+        "label": "شاهد نماء",
+        "width": 144.83750915527344
+      },
+      {
+        "height": 49.60000228881836,
+        "label": "اكتشف المميزات",
+        "width": 158.3125
+      }
+    ],
+    "chrome": 0,
+    "columns": "386.725px 534.062px",
+    "contentWidth": 944.7999877929688,
+    "descriptionLines": 1,
+    "gap": "24px",
+    "heroHeight": 331.95001220703125,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero.webp",
+    "imageWidth": 532.4625244140625,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "36px",
+    "titleLines": 2,
+    "width": 1024
+  },
+  {
+    "buttonTargets": [
+      {
+        "height": 49.60000228881836,
+        "label": "شاهد نماء",
+        "width": 144.83750915527344
+      },
+      {
+        "height": 49.60000228881836,
+        "label": "اكتشف المميزات",
+        "width": 158.3125
+      }
+    ],
+    "chrome": 0,
+    "columns": "500.638px 691.35px",
+    "contentWidth": 1216,
+    "descriptionLines": 1,
+    "gap": "24px",
+    "heroHeight": 363.3875122070313,
+    "imageSource": "http://127.0.0.1:8765/assets/screenshots/namaa-dashboard-hero.webp",
+    "imageWidth": 689.75,
+    "overflow": 0,
+    "textOverflow": [],
+    "titleFont": "44px",
+    "titleLines": 2,
+    "width": 1440
+  }
+]

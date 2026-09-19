@@ -1,0 +1,64 @@
+[
+  {
+    "state": "enabled",
+    "result": {
+      "containerHidden": false,
+      "cta": [
+        {
+          "href": "https://wa.me/15555550123?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%86%D9%85%D8%A7%D8%A1.",
+          "text": "تواصل معنا"
+        },
+        {
+          "href": "https://wa.me/15555550123?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%86%D9%85%D8%A7%D8%A1.",
+          "text": "استفسر عن الخيارات"
+        },
+        {
+          "href": "https://wa.me/15555550123?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%86%D9%85%D8%A7%D8%A1.",
+          "text": "اسأل عن هذا العرض"
+        },
+        {
+          "href": "https://wa.me/15555550123?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%86%D9%85%D8%A7%D8%A1.",
+          "text": "اسأل عن هذا العرض"
+        },
+        {
+          "href": "https://wa.me/15555550123?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%86%D9%85%D8%A7%D8%A1.",
+          "text": "تواصل مع نماء"
+        }
+      ],
+      "social": [
+        "https://www.instagram.com/namaa_test/",
+        "https://www.facebook.com/namaa_test/",
+        "https://wa.me/15555550123"
+      ]
+    }
+  },
+  {
+    "state": "invalid",
+    "result": {
+      "containerHidden": true,
+      "cta": [
+        {
+          "href": "#showcase",
+          "text": "شاهد البرنامج"
+        },
+        {
+          "href": "#showcase",
+          "text": "شاهد نقطة البيع"
+        },
+        {
+          "href": "#showcase",
+          "text": "شاهد البرنامج"
+        },
+        {
+          "href": "#showcase",
+          "text": "شاهد البرنامج"
+        },
+        {
+          "href": "#showcase",
+          "text": "شاهد نماء"
+        }
+      ],
+      "social": []
+    }
+  }
+]

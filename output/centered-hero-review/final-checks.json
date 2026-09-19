@@ -1,0 +1,15 @@
+{
+  "non_hero_html_unchanged": true,
+  "hero_stacked_at_all_widths": true,
+  "real_dashboard_crop_size": [
+    874,
+    378
+  ],
+  "shared_container_max_width": 1240,
+  "seven_widths_no_horizontal_overflow": true,
+  "title_maximum_two_lines": true,
+  "desktop_spacing_passed": true,
+  "both_ctas_clicked": true,
+  "javascript_unchanged": true,
+  "subscription_content_unchanged": true
+}

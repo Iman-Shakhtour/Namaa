@@ -1,0 +1,42 @@
+{
+  "menuOpen": {
+    "bodyLocked": true,
+    "expanded": "true",
+    "panelHidden": false
+  },
+  "menuAfterEscape": {
+    "bodyLocked": false,
+    "expanded": "false",
+    "panelHidden": true
+  },
+  "faq": {
+    "answerHidden": false,
+    "expanded": "true"
+  },
+  "dialogOpen": {
+    "bodyLocked": true,
+    "open": true,
+    "title": "تقرير الأرباح في نماء"
+  },
+  "dialogClosed": {
+    "bodyLocked": false,
+    "open": false
+  },
+  "layout": {
+    "hardwareCards": 3,
+    "overflow": 0,
+    "rtl": "rtl",
+    "storyDesktop": "none",
+    "storyMobile": "grid",
+    "viewport": 390
+  },
+  "desktopSelector": {
+    "activeImage": "1",
+    "pressed": [
+      "false",
+      "true",
+      "false",
+      "false"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "only_hero_html_changed": true,
+  "only_hero_css_selectors_changed": true,
+  "real_dashboard_crop": [
+    788,
+    0,
+    1916,
+    487
+  ],
+  "responsive_widths": [
+    320,
+    360,
+    390,
+    430,
+    768,
+    1024,
+    1440
+  ],
+  "horizontal_overflow": 0,
+  "desktop_hero_before_px": 608.45,
+  "desktop_hero_after_px": 363.3875122070313,
+  "desktop_height_reduction_percent": 40.3,
+  "title_two_lines": true,
+  "mobile_title_max_36px": true,
+  "hero_chrome_and_zoom_removed": true
+}

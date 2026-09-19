@@ -1,0 +1,18 @@
+{
+  "source": "original-screenshots/namaa-dashboard-desktop.png",
+  "source_dimensions": [
+    1916,
+    869
+  ],
+  "crop_box": [
+    788,
+    0,
+    1916,
+    487
+  ],
+  "crop_dimensions": [
+    1128,
+    487
+  ],
+  "operation": "crop and WebP conversion only"
+}

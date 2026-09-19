@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نماء | نظام محاسبي وإدارة أعمال للمحلات</title>
+<meta name="description" content="نماء نظام عربي لإدارة المبيعات، المشتريات، المخزون، العملاء، الحسابات والتقارير للمحلات والمشاريع الصغيرة والمتوسطة.">
+<meta name="keywords" content="برنامج محاسبة, برنامج مبيعات, برنامج مخزون, نقطة بيع, POS, برنامج للمحلات, إدارة المخزون, برنامج فواتير, حسابات العملاء, الموردين, برنامج كاشير">
+<meta name="theme-color" content="#0B1D3A">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="نماء">
+<meta property="og:title" content="نماء | نظام محاسبي وإدارة أعمال للمحلات">
+<meta property="og:description" content="نماء نظام عربي لإدارة المبيعات، المشتريات، المخزون، العملاء، الحسابات والتقارير للمحلات والمشاريع الصغيرة والمتوسطة.">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="assets/screenshots/namaa-dashboard-desktop.webp">
+<meta name="twitter:image" content="assets/screenshots/namaa-dashboard-desktop.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="نماء | نظام محاسبي وإدارة أعمال للمحلات">
+<meta name="twitter:description" content="نماء نظام عربي لإدارة المبيعات، المشتريات، المخزون، العملاء، الحسابات والتقارير للمحلات والمشاريع الصغيرة والمتوسطة.">
+
+<!-- Favicons -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/brand/favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="assets/screenshots/namaa-dashboard-hero.webp" imagesrcset="assets/screenshots/namaa-dashboard-hero-640.webp 640w, assets/screenshots/namaa-dashboard-hero.webp 874w" imagesizes="(min-width: 1280px) 1176px, (min-width: 768px) min(88vw, calc(100vw - 64px)), calc(100vw - 32px)">
+<link rel="stylesheet" href="css/style.css?v=20260916centered">
+</head>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+
+  <symbol id="icon-arrow-fwd" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M5 12h13M12 6l7 6-7 6"/></symbol>
+
+  <symbol id="icon-cart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5h2l2.2 11.2a1.6 1.6 0 0 0 1.6 1.3h7.6a1.6 1.6 0 0 0 1.6-1.3L20.5 8H6.3"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></g></symbol>
+  
+  <symbol id="icon-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5 12 3l8.5 4.5-8.5 4.5-8.5-4.5Z"/><path d="M3.5 7.5v9L12 21l8.5-4.5v-9"/><path d="M12 12v9"/></g></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.1"/><path d="M3 19c.7-3 3-4.8 6-4.8s5.3 1.8 6 4.8"/><path d="M15.5 5a3 3 0 0 1 0 5.9M21 19c-.5-2.2-1.8-3.8-3.7-4.5"/></g></symbol>
+  <symbol id="icon-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h10v9H3z"/><path d="M13 10h4l3.5 3v2.5H13z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></g></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.5l5 5 10-11"/></symbol>
+  <symbol id="icon-barcode" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4.5v15M7.5 4.5v15M10 4.5v15M13.5 4.5v15M16 4.5v15M19.5 4.5v15"/></g></symbol>
+  <symbol id="icon-scan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M18 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M6 20H4a2 2 0 0 1-2-2v-2"/><path d="M4 12h16" stroke-dasharray="0.5 3.2"/></g></symbol>
+  <symbol id="icon-printer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8.5V4h11v4.5"/><path d="M5 8.5h14a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5h-2v3.5h-9V16.5H5A1.5 1.5 0 0 1 3.5 15v-5A1.5 1.5 0 0 1 5 8.5Z"/><path d="M7.5 12.2h3"/></g></symbol>
+  <symbol id="icon-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 9.5h18"/><path d="M6.5 14.5h4"/></g></symbol>
+  <symbol id="icon-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5H18a1 1 0 0 1 1 1V8"/><path d="M3.5 7.5v10A2 2 0 0 0 5.5 19.5H19a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 19 8.5H5.5"/><circle cx="16.2" cy="13" r="1.3"/></g></symbol>
+
+  <symbol id="icon-warehouse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M4.5 9.5V20h15V9.5"/><path d="M9.5 20v-6h5v6"/></g></symbol>
+
+  <symbol id="icon-chart-bar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M9.5 20V4M15 20v-7M20 20V13"/></g></symbol>
+  <symbol id="icon-pie" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v8.5h8.5A8.5 8.5 0 1 1 12 3.5Z"/></g></symbol>
+  <symbol id="icon-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h9.5A2.5 2.5 0 0 1 17 7v13H7.5A2.5 2.5 0 0 1 5 17.5v-13Z"/><path d="M17 7h2.5v13H8" /></g></symbol>
+  
+  <symbol id="icon-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19 6v6c0 4.3-3 7.4-7 8.5-4-1.1-7-4.2-7-8.5V6l7-2.5Z"/><path d="M9 12l2 2 4-4.5"/></g></symbol>
+  <symbol id="icon-settings" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.3M12 18.2v2.3M20.5 12h-2.3M5.8 12H3.5M17.7 6.3l-1.6 1.6M7.9 16.1l-1.6 1.6M17.7 17.7l-1.6-1.6M7.9 7.9 6.3 6.3"/></g></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 6.5a7.6 7.6 0 0 0-12 9.1L4.5 20l4.5-1.2A7.6 7.6 0 0 0 20 12.4a7.6 7.6 0 0 0-2.5-5.9Zm-5.5 12a6.1 6.1 0 0 1-3.1-.85l-.22-.13-2.67.7.71-2.6-.15-.27A6.15 6.15 0 1 1 12 18.5Zm3.4-4.6c-.18-.1-1.08-.53-1.25-.6-.17-.06-.29-.1-.41.1-.12.19-.47.6-.58.72-.1.12-.21.13-.4.04a5 5 0 0 1-1.48-.91 5.6 5.6 0 0 1-1.02-1.27c-.1-.19 0-.28.08-.38.08-.09.19-.22.28-.34.09-.11.12-.19.19-.32.06-.13.03-.24-.02-.34-.05-.1-.41-1-.57-1.36-.15-.36-.3-.31-.41-.31h-.35c-.12 0-.31.04-.48.24-.16.19-.63.62-.63 1.5 0 .89.65 1.75.74 1.87.09.12 1.28 1.96 3.11 2.74.43.19.77.3 1.04.38.44.14.83.12 1.15.07.35-.05 1.08-.44 1.23-.87.15-.42.15-.79.1-.87-.04-.08-.16-.13-.34-.22Z"/></symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></g></symbol>
+
+  <symbol id="icon-wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5a14 14 0 0 1 18 0"/><path d="M6.5 12.2a9 9 0 0 1 11 0"/><path d="M10 15.8a4 4 0 0 1 4 0"/><path d="M12 19.2h.01"/></g></symbol>
+</svg>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="#top" class="brand" aria-label="نماء — الصفحة الرئيسية">
+      <img class="brand__icon" src="assets/brand/icon-mark.webp" alt="" width="192" height="200">
+      <span class="brand__word">نماء<span class="brand__tagline">لحسابات تنمو</span></span>
+    </a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="#mazaya">المميزات</a>
+      <a href="#showcase">شاهد نماء</a>
+      <a href="#why-namaa">ليش نماء؟</a>
+      <a href="#hardware">الأجهزة</a>
+      <a href="#faq">الأسئلة</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#showcase" class="btn btn-primary" data-contact-cta data-contact-label="تواصل معنا">شاهد البرنامج</a>
+      <button class="hamburger" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-panel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="التنقل على الهاتف" hidden>
+    <div class="container">
+      <a href="#mazaya">المميزات</a><a href="#showcase">شاهد نماء</a>
+      <a href="#why-namaa">ليش نماء؟</a><a href="#hardware">الأجهزة</a><a href="#faq">الأسئلة</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>للمحلات والمشاريع الصغيرة والمتوسطة</p>
+        <h1 id="hero-title">كل شغلك وحساباتك <span class="hero__title-accent">بمكان واحد.</span></h1>
+        <p class="hero__desc">مبيعات، مشتريات، مخزون وحسابات — بنظام عربي واحد.</p>
+        <div class="btn-group">
+          <a href="#showcase" class="btn btn-primary">شاهد نماء<svg aria-hidden="true"><use href="#icon-arrow-fwd"/></svg></a>
+          <a href="#mazaya" class="btn btn-secondary">اكتشف المميزات</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <figure class="hero__screen">
+          <img src="assets/screenshots/namaa-dashboard-hero.webp" srcset="assets/screenshots/namaa-dashboard-hero-640.webp 640w, assets/screenshots/namaa-dashboard-hero.webp 874w" sizes="(min-width: 1280px) 1176px, (min-width: 768px) min(88vw, calc(100vw - 64px)), calc(100vw - 32px)" alt="الجزء العلوي من لوحة تحكم نماء: عنوان لوحة التحكم، بطاقات المبيعات والصندوق والشيكات الصادرة، وقائمة أدوات النظام على اليمين" width="874" height="378" fetchpriority="high">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white features" id="mazaya" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">نظام واحد، شغل أرتب</p>
+        <h2 id="features-title">كل اللي تحتاجه لإدارة شغلك</h2>
+        <p>أدوات يومك مترابطة، والمعلومة دايمًا قدامك.</p>
+      </div>
+      <div class="features-grid">
+        <article class="feature-card"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-cart"/></svg></span><div><h3>المبيعات</h3><p>نقطة بيع وفواتير بيع ومرتجعات.</p></div></article>
+        <article class="feature-card"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-truck"/></svg></span><div><h3>المشتريات</h3><p>فواتير الموردين ومرتجعات الشراء.</p></div></article>
+        <article class="feature-card"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-box"/></svg></span><div><h3>المخزون</h3><p>أصناف، باركود، وحدات وتنبيهات مخزون.</p></div></article>
+        <article class="feature-card"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-users"/></svg></span><div><h3>العملاء والموردون</h3><p>أرصدة وكشوف حساب واضحة.</p></div></article>
+        <article class="feature-card"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-chart-bar"/></svg></span><div><h3>التقارير</h3><p>مبيعات، أرباح ومتابعة الأداء.</p></div></article>
+        <article class="feature-card"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-book"/></svg></span><div><h3>المحاسبة</h3><p>قيود وصندوق ومصروفات وشيكات.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section showcase" id="showcase" aria-labelledby="showcase-title">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">البرنامج، كما هو</p>
+        <h2 id="showcase-title">شوف نماء من جوّا</h2>
+        <p>واجهات واضحة تساعدك توصل للمعلومة بسرعة.</p>
+      </div>
+      <div class="showcase-tabs" role="tablist" aria-label="شاشات نماء" hidden>
+        <button type="button" id="tab-dashboard" role="tab" aria-controls="panel-dashboard" aria-selected="true" tabindex="0"><svg aria-hidden="true"><use href="#icon-pie"/></svg>لوحة التحكم</button>
+        <button type="button" id="tab-pos" role="tab" aria-controls="panel-pos" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#icon-card"/></svg>نقطة البيع</button>
+        <button type="button" id="tab-inventory" role="tab" aria-controls="panel-inventory" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#icon-box"/></svg>المخزون</button>
+        <button type="button" id="tab-reports" role="tab" aria-controls="panel-reports" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#icon-chart-bar"/></svg>التقارير</button>
+        <button type="button" id="tab-rbac" role="tab" aria-controls="panel-rbac" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#icon-shield"/></svg>الصلاحيات</button>
+      </div>
+      <div class="showcase-toolbar">
+        <p><span class="live-dot" aria-hidden="true"></span>شاشات حقيقية من نماء</p>
+        <div class="device-options" role="group" aria-label="نوع الشاشة" data-mobile-controls hidden>
+          <button type="button" data-device="desktop" aria-pressed="true">الكمبيوتر</button>
+          <button type="button" data-device="mobile" aria-pressed="false">الهاتف</button>
+        </div>
+      </div>
+      <div class="showcase-panels">
+        <div class="showcase-panel" id="panel-dashboard" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0" data-mobile="true">
+          <div class="showcase-panel__copy"><h3>صورة سريعة عن وضع محلك</h3><p>الصندوق، العملاء، الموردون والبنوك… كل الأرصدة قدامك.</p></div>
+          <button type="button" class="screen-frame showcase-screen" data-title="لوحة التحكم في نماء" aria-label="تكبير صورة لوحة التحكم" aria-haspopup="dialog" data-panel-zoom>
+            <img data-device-image="desktop" data-src="assets/screenshots/namaa-dashboard-desktop.webp" alt="لوحة التحكم في نماء على الكمبيوتر تعرض المبيعات وأرصدة الصندوق والذمم والبنوك والشيكات" width="1916" height="869" loading="lazy" decoding="async">
+            <img data-device-image="mobile" data-src="assets/screenshots/namaa-dashboard-mobile.webp" alt="لوحة التحكم الحقيقية في نماء على الهاتف، ببطاقات المبيعات والأرصدة والشيكات" width="352" height="760" loading="lazy" decoding="async" hidden>
+            <span class="screen-frame__caption"><span>لوحة التحكم</span><span>تكبير الشاشة <svg aria-hidden="true"><use href="#icon-scan"/></svg></span></span>
+          </button>
+        </div>
+        <div class="showcase-panel" id="panel-pos" role="tabpanel" aria-labelledby="tab-pos" tabindex="0" data-mobile="true" hidden>
+          <div class="showcase-panel__copy"><h3>بيع واضح وسريع</h3><p>بحث بالاسم أو الباركود، سلة واضحة وطرق دفع متعددة.</p></div>
+          <button type="button" class="screen-frame showcase-screen" data-title="نقطة البيع في نماء" aria-label="تكبير صورة نقطة البيع" aria-haspopup="dialog" data-panel-zoom>
+            <img data-device-image="desktop" data-src="assets/screenshots/namaa-pos-desktop.webp" alt="واجهة نقطة البيع الداكنة في نماء على الكمبيوتر مع البحث بالباركود وسلة الفاتورة وطرق الدفع" width="1919" height="870" loading="lazy" decoding="async">
+            <img data-device-image="mobile" data-src="assets/screenshots/namaa-pos-mobile.webp" alt="نقطة البيع الداكنة في نماء على الهاتف مع البحث والأصناف وزر السلة" width="356" height="761" loading="lazy" decoding="async" hidden>
+            <span class="screen-frame__caption"><span>نقطة البيع</span><span>تكبير الشاشة <svg aria-hidden="true"><use href="#icon-scan"/></svg></span></span>
+          </button>
+        </div>
+        <div class="showcase-panel" id="panel-inventory" role="tabpanel" aria-labelledby="tab-inventory" tabindex="0" data-mobile="true" hidden>
+          <div class="showcase-panel__copy"><h3>مخزونك، من شاشة واحدة</h3><p>تابع الأصناف والكميات والأسعار، واستورد قائمتك من إكسل.</p></div>
+          <button type="button" class="screen-frame showcase-screen" data-title="الأصناف والمخزون في نماء" aria-label="تكبير صورة الأصناف والمخزون" aria-haspopup="dialog" data-panel-zoom>
+            <img data-device-image="desktop" data-src="assets/screenshots/namaa-inventory-desktop.webp" alt="قائمة الأصناف في نماء على الكمبيوتر مع الباركود والوحدات والأسعار والكميات والقائمة الجانبية كاملة" width="1919" height="868" loading="lazy" decoding="async">
+            <img data-device-image="mobile" data-src="assets/screenshots/namaa-items-mobile.webp" alt="قائمة الأصناف الحقيقية في نماء على الهاتف مع بحث الأصناف واستيراد إكسل" width="353" height="759" loading="lazy" decoding="async" hidden>
+            <span class="screen-frame__caption"><span>الأصناف والمخزون</span><span>تكبير الشاشة <svg aria-hidden="true"><use href="#icon-scan"/></svg></span></span>
+          </button>
+        </div>
+        <div class="showcase-panel" id="panel-reports" role="tabpanel" aria-labelledby="tab-reports" tabindex="0" hidden>
+          <div class="showcase-panel__copy"><h3>اعرف شو ربحت</h3><p>مبيعاتك، تكلفتك وصافي الربح خلال أي فترة تختارها.</p></div>
+          <button type="button" class="screen-frame showcase-screen" data-title="تقرير الأرباح في نماء" aria-label="تكبير صورة تقرير الأرباح" aria-haspopup="dialog" data-panel-zoom>
+            <img data-device-image="desktop" data-src="assets/screenshots/namaa-profit-report.webp" alt="تقرير الأرباح الفعلي في نماء يعرض مبيعات 1,200 وتكلفة بضاعة 480 وصافي ربح 720 وتفاصيل ربح المنتج" width="1897" height="870" loading="lazy" decoding="async">
+            <span class="screen-frame__caption"><span>تقرير الأرباح</span><span>تكبير الشاشة <svg aria-hidden="true"><use href="#icon-scan"/></svg></span></span>
+          </button>
+        </div>
+        <div class="showcase-panel" id="panel-rbac" role="tabpanel" aria-labelledby="tab-rbac" tabindex="0" hidden>
+          <div class="showcase-panel__copy"><h3>كل موظف، بصلاحيته</h3><p>حدد لكل مستخدم ما يمكنه رؤيته واستخدامه حسب مسؤوليته.</p></div>
+          <button type="button" class="screen-frame showcase-screen" data-title="إدارة المستخدمين والصلاحيات في نماء" aria-label="تكبير صورة المستخدمين والصلاحيات" aria-haspopup="dialog" data-panel-zoom>
+            <img data-device-image="desktop" data-src="assets/screenshots/namaa-rbac-users.webp" alt="إدارة المستخدمين وجدول صلاحيات المدير والمحاسب والكاشير والمستودعجي في نماء، مع حجب أسماء الدخول" width="1901" height="870" loading="lazy" decoding="async">
+            <span class="screen-frame__caption"><span>المستخدمون والصلاحيات</span><span>تكبير الشاشة <svg aria-hidden="true"><use href="#icon-scan"/></svg></span></span>
+          </button>
+        </div>
+      </div>
+      <noscript><p class="noscript-note">شاهد الصور الأصلية: <a href="assets/screenshots/namaa-dashboard-desktop.webp">لوحة التحكم</a> · <a href="assets/screenshots/namaa-pos-desktop.webp">نقطة البيع</a> · <a href="assets/screenshots/namaa-inventory-desktop.webp">المخزون</a> · <a href="assets/screenshots/namaa-profit-report.webp">التقارير</a> · <a href="assets/screenshots/namaa-rbac-users.webp">الصلاحيات</a>.</p><style>.showcase-panels{display:none}.hamburger{display:none}.mobile-panel[hidden]{display:block;position:static}.mobile-panel .container{display:flex;flex-wrap:wrap}</style></noscript>
+    </div>
+  </section>
+
+  <section class="section section--white why" id="why-namaa" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">معمول لطبيعة شغلك</p><h2 id="why-title">ليش نماء مختلف؟</h2><p>مرونة في الشغل، ووضوح في المسؤوليات.</p></div>
+      <div class="why-grid">
+        <article class="why-card why-card--visual" id="pos">
+          <div class="why-card__heading"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-wifi"/></svg></span><h3>النت فصل؟ البيع بكمل.</h3></div>
+          <p>بعد بدء العمل أونلاين، يمكنك مواصلة عمليات البيع المدعومة عند انقطاع الإنترنت، ثم مزامنتها عند عودة الاتصال.</p>
+
+          <p class="offline-scope">ابدأ بتسجيل الدخول وعملية بيع أونلاين. بعدها يتاح البيع دون اتصال من فاتورة البيع وPOS للبيع النقدي.</p>
+          <ol class="offline-steps" aria-label="مراحل البيع والمزامنة">
+            <li><span class="offline-steps__number" aria-hidden="true">1</span><div><h4>انقطع الاتصال</h4><p>كمّل البيع.</p></div></li>
+            <li><span class="offline-steps__number" aria-hidden="true">2</span><div><h4>العملية محفوظة</h4><p>تابع العمليات التي تنتظر المزامنة.</p></div></li>
+            <li><span class="offline-steps__number" aria-hidden="true">3</span><div><h4>رجع الإنترنت</h4><p>زامن العمليات وكمل شغلك.</p></div></li>
+          </ol>
+          <p class="sync-note">تابع مؤشر المزامنة أعلى النظام. إذا ظهرت «تعذرت المزامنة»، اضغط سهم إعادة المحاولة حتى تظهر «تمت المزامنة».</p>
+          <button type="button" class="screen-frame why-card__screen" data-zoom="assets/screenshots/namaa-pos-desktop.webp" data-title="نقطة البيع في نماء" aria-label="تكبير شاشة نقطة البيع" aria-haspopup="dialog"><img src="assets/screenshots/namaa-pos-desktop.webp" alt="شاشة نقطة البيع الداكنة الفعلية في نماء" width="1919" height="870" loading="lazy" decoding="async"><span class="screen-frame__caption">شاهد نقطة البيع<svg aria-hidden="true"><use href="#icon-scan"/></svg></span></button>
+        </article>
+        <article class="why-card why-card--visual">
+          <div class="why-card__heading"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-shield"/></svg></span><h3>كل موظف… بصلاحيته.</h3></div>
+          <p>مدير، محاسب، كاشير، مندوب أو مستودعجي — حدد لكل مستخدم ما يمكنه الوصول إليه حسب مسؤوليته.</p>
+          <span class="soft-badge">بدون رسوم إضافية على ميزة الصلاحيات</span>
+          <button type="button" class="screen-frame why-card__screen" data-zoom="assets/screenshots/namaa-rbac-users.webp" data-title="المستخدمون والصلاحيات في نماء" aria-label="تكبير شاشة المستخدمين والصلاحيات" aria-haspopup="dialog"><img src="assets/screenshots/namaa-rbac-users.webp" alt="شاشة إدارة المستخدمين والأدوار وجدول الصلاحيات في نماء، بأسماء دخول محجوبة" width="1901" height="870" loading="lazy" decoding="async"><span class="screen-frame__caption">شاهد الصلاحيات<svg aria-hidden="true"><use href="#icon-scan"/></svg></span></button>
+        </article>
+        <article class="why-card"><div class="why-card__heading"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-warehouse"/></svg></span><h3>بيئة خاصة لكل عميل.</h3></div><p>يحصل كل عميل على رابط مخصص وقاعدة بيانات مستقلة لنسخته من نماء.</p></article>
+        <article class="why-card"><div class="why-card__heading"><span class="icon-badge"><svg aria-hidden="true"><use href="#icon-settings"/></svg></span><h3>شغلك مختلف؟ نماء بيتكيّف.</h3></div><p>إذا احتاج نشاطك تعديلًا أو إضافة خاصة، يمكن تنفيذ التخصيص المتفق عليه على نسختك بدون رسوم إضافية.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hardware section--mint" id="hardware" aria-labelledby="hardware-title">
+    <div class="container">
+      <div class="hardware__heading"><div class="section-head"><p class="eyebrow">تجهيزات تكمل التجربة</p><h2 id="hardware-title">جهّز محلك مع نماء</h2><p>خيارات أجهزة تساعدك تكمل بيئة البيع عندك.</p></div><button type="button" class="btn btn-secondary" id="hardware-options-button" aria-expanded="false" aria-controls="hardware-options" hidden>عرض خيارات الأجهزة</button></div>
+      <div class="hardware-grid" id="hardware-products"></div>
+      <div class="hardware-options" id="hardware-options" role="region" aria-labelledby="hardware-options-title" tabindex="-1" hidden>
+        <h3 id="hardware-options-title">خيارات الأجهزة والمستلزمات</h3><div class="hardware-options__list" id="hardware-options-list"></div>
+      </div>
+      <p class="hardware-source">صور وأسعار الأجهزة من <a href="https://logix-mobile.com/shop.php?category=pos" target="_blank" rel="noopener noreferrer">Logix Mobile</a>. أسعار الأجهزة مستقلة عن اشتراك نماء.</p>
+      <noscript><p>يمكنك مراجعة خيارات الأجهزة وأسعارها عبر رابط Logix Mobile أعلاه.</p></noscript>
+    </div>
+  </section>
+
+<!-- The existing subscription section is retained without changes to commercial data. -->
+<section class="section section--white" id="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow"><span class="eyebrow__dot"></span>الاشتراكات</div>
+      <h2 id="pricing-title">طريقتان واضحتان للدفع</h2>
+      <p>اختر بين امتلاك نماء مدى الحياة، أو سعر بداية أقل مع تجديد سنوي للتحديثات والصيانة والدعم الفني.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="price-card price-card--featured card">
+        <span class="price-card__badge">الخيار الأول</span>
+        <h3>امتلاك نماء مدى الحياة</h3>
+        <p class="price-card__desc">دفعة واحدة، بدون رسوم تجديد سنوية حسب هذا العرض.</p>
+        <div class="price-main"><b><small>$</small>1600</b><span>دفعة واحدة</span></div>
+        <div class="price-or">أو بالتقسيط</div>
+        <div class="price-installment">
+          <div><b><small>$</small>300</b><span>شهريًا</span></div>
+          <em>6 دفعات · الإجمالي 1800$</em>
+        </div>
+        <ul class="check-list price-card__list">
+          <li>امتلاك مدى الحياة</li>
+          <li>خيار دفع مباشر أو 6 أقساط</li>
+        </ul>
+        <a href="#showcase" data-contact-cta data-contact-label="اسأل عن هذا العرض" class="btn btn-primary btn-block">شاهد البرنامج</a>
+      </article>
+
+      <article class="price-card card">
+        <span class="price-card__badge price-card__badge--soft">الخيار الثاني</span>
+        <h3>سعر بداية أقل</h3>
+        <p class="price-card__desc">مع 100$ سنويًا للتجديد والتحديثات والصيانة والدعم الفني.</p>
+        <div class="price-main"><b><small>$</small>1000</b><span>دفعة واحدة</span></div>
+        <div class="price-renew"><b>+$100</b> سنويًا للتجديد والتحديثات والصيانة والدعم الفني</div>
+        <div class="price-or">أو بالتقسيط</div>
+        <div class="price-installment">
+          <div><b><small>$</small>300</b><span>شهريًا</span></div>
+          <em>4 دفعات · الإجمالي 1200$ + 100$ سنويًا</em>
+        </div>
+        <ul class="check-list price-card__list">
+          <li>سعر بداية أقل</li>
+          <li>خيار دفع مباشر أو 4 أقساط</li>
+        </ul>
+        <a href="#showcase" data-contact-cta data-contact-label="اسأل عن هذا العرض" class="btn btn-secondary btn-block">شاهد البرنامج</a>
+      </article>
+    </div>
+
+    <p class="pricing-note"><b>قبل الاشتراك:</b> تواصل معنا للتأكد من تفاصيل العرض وطريقة الدفع المناسبة لنشاطك.</p>
+  </div>
+</section>
+
+  <section class="section faq section--white" id="faq" aria-labelledby="faq-title">
+    <div class="container faq__inner">
+      <div class="section-head"><p class="eyebrow">قبل ما تبدأ</p><h2 id="faq-title">أسئلة ببالك؟</h2><p>أجوبة سريعة عن نماء.</p></div>
+      <div class="faq-list">
+        <article class="faq-item"><h3><button type="button" class="faq-item__q" id="faq-question-1" aria-expanded="true" aria-controls="faq-answer-1">شو هو نماء؟<span class="faq-item__icon" aria-hidden="true"></span></button></h3><div class="faq-item__a" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><p>نظام محاسبي وإدارة أعمال يجمع المبيعات، المشتريات، المخزون، الحسابات والتقارير في مكان واحد.</p></div></article>
+        <article class="faq-item"><h3><button type="button" class="faq-item__q" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">هل أقدر أشتغل إذا فصل الإنترنت؟<span class="faq-item__icon" aria-hidden="true"></span></button></h3><div class="faq-item__a" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><p>نعم، بعد تسجيل الدخول وبدء البيع أونلاين. عند انقطاع الاتصال يمكنك مواصلة البيع من فاتورة البيع وPOS النقدي؛ الدعم لا يشمل كل النظام.</p></div></article>
+        <article class="faq-item"><h3><button type="button" class="faq-item__q" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">شو بصير بالفواتير الأوفلاين؟<span class="faq-item__icon" aria-hidden="true"></span></button></h3><div class="faq-item__a" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><p>تُحفظ العمليات محليًا وتظهر العمليات التي تنتظر المزامنة أعلى النظام. عند عودة الاتصال يمكنك مزامنتها، وإعادة المحاولة بالسهم إذا تعذرت المزامنة.</p></div></article>
+        <article class="faq-item"><h3><button type="button" class="faq-item__q" id="faq-question-4" aria-expanded="false" aria-controls="faq-answer-4">هل أقدر أحدد صلاحيات الموظفين؟<span class="faq-item__icon" aria-hidden="true"></span></button></h3><div class="faq-item__a" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><p>نعم، تحدد الأدوار والصلاحيات حسب مسؤولية كل مستخدم، بدون رسوم إضافية على ميزة الصلاحيات نفسها.</p></div></article>
+        <article class="faq-item"><h3><button type="button" class="faq-item__q" id="faq-question-5" aria-expanded="false" aria-controls="faq-answer-5">هل يمكن تعديل النظام حسب طبيعة شغلي؟<span class="faq-item__icon" aria-hidden="true"></span></button></h3><div class="faq-item__a" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden><p>يمكن مناقشة تعديل أو إضافة وتنفيذ التخصيص المتفق عليه على نسختك بدون رسوم إضافية.</p></div></article>
+      </div>
+      <noscript><style>.faq-item__a[hidden]{display:block}.faq-item__icon{display:none}</style></noscript>
+    </div>
+  </section>
+
+  <section class="section final-cta" aria-labelledby="final-title">
+    <div class="container final-cta__inner">
+      <p class="eyebrow">نماء.. لحسابات تنمو</p><h2 id="final-title">جاهز ترتّب شغلك مع نماء؟</h2>
+      <p>شوف النظام وتعرّف على الأدوات اللي ممكن تسهّل إدارة مشروعك.</p>
+      <a href="#showcase" class="btn btn-light" data-contact-cta data-contact-label="تواصل مع نماء">شاهد نماء<svg aria-hidden="true"><use href="#icon-arrow-fwd"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="#top" class="brand" aria-label="نماء — العودة إلى البداية"><img class="brand__icon" src="assets/brand/icon-mark.webp" alt="" width="192" height="200" loading="lazy"><span class="brand__word">نماء<span class="brand__tagline">لحسابات تنمو</span></span></a>
+      <p class="footer__description">نظام محاسبي وإدارة أعمال عربي.<br>كل شغلك وحساباتك بمكان واحد.</p>
+      <nav class="footer__nav" aria-label="روابط التذييل"><a href="#mazaya">المميزات</a><a href="#showcase">شاهد نماء</a><a href="#pricing">الاشتراكات</a><a href="#faq">الأسئلة</a></nav>
+      <div class="footer__social" aria-label="تواصل مع نماء" hidden>
+        <a data-social="instagram" aria-label="نماء على إنستغرام" target="_blank" rel="noopener noreferrer" hidden><svg aria-hidden="true"><use href="#icon-instagram"/></svg></a>
+        <a data-social="facebook" aria-label="نماء على فيسبوك" target="_blank" rel="noopener noreferrer" hidden>f</a>
+        <a data-whatsapp aria-label="تواصل مع نماء عبر واتساب" target="_blank" rel="noopener noreferrer" hidden><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__bottom"><span>© <span id="current-year">2026</span> نماء. جميع الحقوق محفوظة.</span><a href="#top">العودة للأعلى<svg aria-hidden="true"><use href="#icon-arrow-fwd"/></svg></a></div>
+  </div>
+</footer>
+
+<template id="tutorials-template">
+  <section class="section tutorials section--white" id="tutorials" aria-labelledby="tutorials-title">
+    <div class="container"><div class="section-head"><h2 id="tutorials-title">شروحات نماء</h2><p>شروحات عملية تساعدك تتعرف على أدوات النظام.</p></div><div class="tutorials-grid"></div></div>
+  </section>
+</template>
+
+<dialog class="screenshot-dialog" id="screenshot-dialog" aria-labelledby="screenshot-dialog-title">
+  <div class="screenshot-dialog__header"><h2 id="screenshot-dialog-title">شاشة نماء</h2><button type="button" class="dialog-close" aria-label="إغلاق الصورة" autofocus><span aria-hidden="true">×</span></button></div>
+  <div class="screenshot-dialog__body"><img id="screenshot-dialog-image" alt="" width="1916" height="869"></div>
+  <div class="screenshot-dialog__footer"><span>صورة فعلية من نماء</span><a id="screenshot-original-link" target="_blank" rel="noopener noreferrer">فتح بالحجم الأصلي<svg aria-hidden="true"><use href="#icon-scan"/></svg></a></div>
+</dialog>
+
+<script src="js/site-config.js?v=20260916a" defer></script>
+<script src="js/hardware-data.js?v=20260916a" defer></script>
+<script src="js/tutorials-data.js?v=20260916a" defer></script>
+<script src="js/main.js?v=20260916a" defer></script>
+</body>
+</html>

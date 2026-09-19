@@ -1,0 +1,22 @@
+{
+  "original_size": [
+    1916,
+    869
+  ],
+  "crop_box": [
+    1042,
+    0,
+    1916,
+    378
+  ],
+  "crop_size": [
+    874,
+    378
+  ],
+  "aspect_ratio": 2.3122,
+  "operations": [
+    "crop",
+    "WebP conversion"
+  ],
+  "source": "supplied Namaa dashboard PNG"
+}

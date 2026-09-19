@@ -1,0 +1,22 @@
+{
+  "modified": [
+    "index.html",
+    "css/style.css",
+    "js/main.js",
+    "README.md"
+  ],
+  "addedOrRegenerated": [
+    "DELIVERY.md",
+    "assets/media/namaa-product-tour.webm",
+    "assets/media/namaa-product-tour-mobile.webm",
+    "assets/screenshots/namaa-dashboard-hero-16x9.webp",
+    "assets/screenshots/namaa-items-mobile-focus.webp",
+    "assets/screenshots/namaa-profit-16x9.webp",
+    "assets/screenshots/namaa-rbac-focus.webp",
+    "js/hardware-data.js",
+    "js/site-config.js",
+    "js/tutorials-data.js"
+  ],
+  "removedLegacyArea": "assets/images/",
+  "deployment": "not performed"
+}

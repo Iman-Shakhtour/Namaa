@@ -1,0 +1,73 @@
+{
+  "local_references_valid": true,
+  "aria_targets_valid": true,
+  "unique_ids": true,
+  "all_image_dimensions_valid": true,
+  "pricing_commercial_text_unchanged": true,
+  "feature_cards": 6,
+  "faq_questions": 4,
+  "screenshots": [
+    {
+      "file": "namaa-dashboard-desktop-1280.webp",
+      "width": 1280,
+      "height": 581,
+      "bytes": 43296
+    },
+    {
+      "file": "namaa-dashboard-desktop-640.webp",
+      "width": 640,
+      "height": 290,
+      "bytes": 17166
+    },
+    {
+      "file": "namaa-dashboard-desktop.webp",
+      "width": 1916,
+      "height": 869,
+      "bytes": 70746
+    },
+    {
+      "file": "namaa-dashboard-mobile.webp",
+      "width": 352,
+      "height": 760,
+      "bytes": 21672
+    },
+    {
+      "file": "namaa-inventory-desktop.webp",
+      "width": 1919,
+      "height": 868,
+      "bytes": 60266
+    },
+    {
+      "file": "namaa-items-mobile.webp",
+      "width": 353,
+      "height": 759,
+      "bytes": 15202
+    },
+    {
+      "file": "namaa-pos-desktop.webp",
+      "width": 1919,
+      "height": 870,
+      "bytes": 42904
+    },
+    {
+      "file": "namaa-pos-mobile.webp",
+      "width": 356,
+      "height": 761,
+      "bytes": 15464
+    },
+    {
+      "file": "namaa-profit-report.webp",
+      "width": 1897,
+      "height": 870,
+      "bytes": 95474
+    },
+    {
+      "file": "namaa-rbac-users.webp",
+      "width": 1901,
+      "height": 870,
+      "bytes": 90210
+    }
+  ],
+  "build_script": null,
+  "lint_script": null
+}

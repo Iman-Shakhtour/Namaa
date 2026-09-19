@@ -1,0 +1,83 @@
+[
+  {
+    "id": "wired-scanner",
+    "name": "قارئ باركود سلكي مع حامل",
+    "price": 150,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=wired-handheld-barcode-scanner-with-stand",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_4896b8e9d3090d27.webp?v=1786869067",
+    "image": "assets/hardware/wired-scanner.webp"
+  },
+  {
+    "id": "haixun-scanner",
+    "name": "قارئ HAIXUN سلكي مع قاعدة",
+    "price": 180,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=haixun",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_b0672892499cd99f.webp?v=1786869959",
+    "image": "assets/hardware/haixun-scanner.webp"
+  },
+  {
+    "id": "rugged-scanner",
+    "name": "قارئ باركود سلكي مقاوم للصدمات",
+    "price": 200,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=rugged-wired-barcode-scanner-with-stand",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_fb17162d318fa91e.webp?v=1786870075",
+    "image": "assets/hardware/rugged-scanner.webp"
+  },
+  {
+    "id": "desktop-2d-scanner",
+    "name": "قارئ باركود مكتبي ثنائي الأبعاد",
+    "price": 350,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=desktop-omnidirectional-2d-barcode-scanner",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_51432f08f54b8b57.webp?v=1786868028",
+    "image": "assets/hardware/desktop-2d-scanner.webp"
+  },
+  {
+    "id": "wireless-scanner",
+    "name": "قارئ باركود لاسلكي مع قاعدة شحن",
+    "price": 350,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=wireless-barcode-scanner-with-charging-data-cradle",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_bd0c575380888fea.webp?v=1786870922",
+    "image": "assets/hardware/wireless-scanner.webp"
+  },
+  {
+    "id": "scanner-stand",
+    "name": "حامل قارئ الباركود",
+    "price": 30,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=barcode-scanner-stand-holder",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_3fc84af1b01b9654.webp?v=1786867854",
+    "image": "assets/hardware/scanner-stand.webp"
+  },
+  {
+    "id": "thermal-paper",
+    "name": "رول ورق حراري للفواتير",
+    "price": 5,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786616653",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260817_39aa15b7223496de.webp?v=1786952054",
+    "image": "assets/hardware/thermal-paper.webp"
+  },
+  {
+    "id": "barcode-labels",
+    "name": "رول ليبل باركود",
+    "price": 30,
+    "approvedPrice": true,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786366489",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260829_2abcff8719903a57.webp?v=1787985523",
+    "image": "assets/hardware/barcode-labels.webp"
+  },
+  {
+    "id": "xprinter-n160ii",
+    "name": "طابعة فواتير Xprinter XP-N160II",
+    "price": null,
+    "approvedPrice": false,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=xprinter-xp-n160ii",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_e33100f7ff7f31f9.webp?v=1786868147",
+    "image": "assets/hardware/xprinter-n160ii.webp"
+  }
+]

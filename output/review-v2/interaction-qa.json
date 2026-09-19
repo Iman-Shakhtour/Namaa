@@ -1,0 +1,384 @@
+[
+  {
+    "test": "mobile-menu-open",
+    "expanded": "true",
+    "hidden": false
+  },
+  {
+    "test": "mobile-menu-escape",
+    "expanded": "false",
+    "focus": "فتح القائمة",
+    "hidden": true
+  },
+  {
+    "test": "faq-click",
+    "question": "شو هو نماء؟",
+    "states": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أشتغل إذا فصل الإنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو بصير بالفواتير الأوفلاين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تعديل النظام حسب طبيعة شغلي؟"
+      }
+    ]
+  },
+  {
+    "test": "faq-click",
+    "question": "هل أقدر أشتغل إذا فصل الإنترنت؟",
+    "states": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "هل أقدر أشتغل إذا فصل الإنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو بصير بالفواتير الأوفلاين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تعديل النظام حسب طبيعة شغلي؟"
+      }
+    ]
+  },
+  {
+    "test": "faq-click",
+    "question": "شو بصير بالفواتير الأوفلاين؟",
+    "states": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أشتغل إذا فصل الإنترنت؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "شو بصير بالفواتير الأوفلاين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تعديل النظام حسب طبيعة شغلي؟"
+      }
+    ]
+  },
+  {
+    "test": "faq-click",
+    "question": "هل أقدر أحدد صلاحيات الموظفين؟",
+    "states": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أشتغل إذا فصل الإنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو بصير بالفواتير الأوفلاين؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تعديل النظام حسب طبيعة شغلي؟"
+      }
+    ]
+  },
+  {
+    "test": "faq-click",
+    "question": "هل يمكن تعديل النظام حسب طبيعة شغلي؟",
+    "states": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أشتغل إذا فصل الإنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو بصير بالفواتير الأوفلاين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "هل يمكن تعديل النظام حسب طبيعة شغلي؟"
+      }
+    ]
+  },
+  {
+    "test": "faq-keyboard-enter",
+    "expanded": "false",
+    "hidden": true
+  },
+  {
+    "test": "hardware-keyboard-escape",
+    "expanded": "false",
+    "focus": "hardware-options-button",
+    "hidden": true
+  },
+  {
+    "test": "mobile-menu-anchor",
+    "focus": "why-namaa",
+    "hash": "#why-namaa",
+    "menuHidden": true
+  },
+  {
+    "test": "mobile-modal-fit",
+    "height": 844,
+    "open": true,
+    "rect": {
+      "bottom": 572.7625122070312,
+      "left": 12,
+      "right": 378.3999938964844,
+      "top": 271.2250061035156
+    },
+    "width": 390
+  },
+  {
+    "test": "modal-forward-focus-wrap",
+    "focus": "إغلاق الصورة"
+  },
+  {
+    "test": "modal-reverse-focus-wrap",
+    "focus": "screenshot-original-link"
+  },
+  {
+    "test": "modal-escape",
+    "focus": "تكبير شاشة نقطة البيع",
+    "open": false
+  },
+  {
+    "test": "showcase-tab-at-390",
+    "tab": "لوحة التحكم",
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-dashboard-desktop.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 390
+  },
+  {
+    "test": "showcase-tab-at-390",
+    "tab": "نقطة البيع",
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-pos-desktop.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 390
+  },
+  {
+    "test": "showcase-tab-at-390",
+    "tab": "المخزون",
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-inventory-desktop.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 390
+  },
+  {
+    "test": "showcase-tab-at-390",
+    "tab": "التقارير",
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-profit-report.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 390
+  },
+  {
+    "test": "showcase-tab-at-390",
+    "tab": "الصلاحيات",
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-rbac-users.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 390
+  },
+  {
+    "test": "tab-rtl-keyboard",
+    "focus": "tab-pos",
+    "selected": "tab-pos"
+  },
+  {
+    "test": "mobile-modal-fit",
+    "height": 844,
+    "open": true,
+    "rect": {
+      "bottom": 572.7625122070312,
+      "left": 12,
+      "right": 378.3999938964844,
+      "top": 271.2250061035156
+    },
+    "width": 390
+  },
+  {
+    "test": "desktop-tab",
+    "tab": "لوحة التحكم",
+    "naturalWidth": 1916,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-dashboard-desktop.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 1440
+  },
+  {
+    "test": "desktop-tab",
+    "tab": "نقطة البيع",
+    "naturalWidth": 1919,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-pos-desktop.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 1440
+  },
+  {
+    "test": "desktop-tab",
+    "tab": "المخزون",
+    "naturalWidth": 0,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-inventory-desktop.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 1440
+  },
+  {
+    "test": "desktop-tab",
+    "tab": "التقارير",
+    "naturalWidth": 0,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-profit-report.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 1440
+  },
+  {
+    "test": "desktop-tab",
+    "tab": "الصلاحيات",
+    "naturalWidth": 1901,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-rbac-users.webp",
+    "visibleImages": 1,
+    "visiblePanels": 1,
+    "width": 1440
+  },
+  {
+    "test": "desktop-modal-fit",
+    "height": 1000,
+    "open": true,
+    "rect": {
+      "bottom": 869.7375335693359,
+      "left": 60,
+      "right": 1380,
+      "top": 130.2624969482422
+    },
+    "width": 1440
+  },
+  {
+    "test": "desktop-lazy-image-loaded",
+    "tab": "المخزون",
+    "complete": true,
+    "naturalWidth": 1919,
+    "source": "assets/screenshots/namaa-inventory-desktop.webp",
+    "width": 1440
+  },
+  {
+    "test": "desktop-lazy-image-loaded",
+    "tab": "التقارير",
+    "complete": true,
+    "naturalWidth": 1897,
+    "source": "assets/screenshots/namaa-profit-report.webp",
+    "width": 1440
+  },
+  {
+    "test": "mobile-real-screen",
+    "tab": "لوحة التحكم",
+    "naturalWidth": 0,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-dashboard-mobile.webp",
+    "visibleImages": 1,
+    "width": 390
+  },
+  {
+    "test": "mobile-real-screen",
+    "tab": "نقطة البيع",
+    "naturalWidth": 356,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-pos-mobile.webp",
+    "visibleImages": 1,
+    "width": 390
+  },
+  {
+    "test": "mobile-real-screen",
+    "tab": "المخزون",
+    "naturalWidth": 353,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-items-mobile.webp",
+    "visibleImages": 1,
+    "width": 390
+  },
+  {
+    "test": "mobile-dashboard-loaded-after-visible-zoom",
+    "naturalWidth": 352,
+    "overflow": 0,
+    "source": "assets/screenshots/namaa-dashboard-mobile.webp",
+    "width": 390
+  }
+]

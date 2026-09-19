@@ -1,0 +1,286 @@
+[
+  {
+    "naturalWidth": 1916,
+    "overflow": 0,
+    "ratioError": 0.000009821797401166066,
+    "selected": "لوحة التحكم",
+    "source": "assets/screenshots/namaa-dashboard-desktop.webp",
+    "test": "desktop-tab",
+    "visibleImages": 1,
+    "visiblePanels": 1
+  },
+  {
+    "naturalWidth": 1919,
+    "overflow": 0,
+    "ratioError": 0.00004717261010300789,
+    "selected": "نقطة البيع",
+    "source": "assets/screenshots/namaa-pos-desktop.webp",
+    "test": "desktop-tab",
+    "visibleImages": 1,
+    "visiblePanels": 1
+  },
+  {
+    "naturalWidth": 1919,
+    "overflow": 0,
+    "ratioError": 0.000034477874471861014,
+    "selected": "المخزون",
+    "source": "assets/screenshots/namaa-inventory-desktop.webp",
+    "test": "desktop-tab",
+    "visibleImages": 1,
+    "visiblePanels": 1
+  },
+  {
+    "naturalWidth": 1897,
+    "overflow": 0,
+    "ratioError": 0.00003628988112991394,
+    "selected": "التقارير",
+    "source": "assets/screenshots/namaa-profit-report.webp",
+    "test": "desktop-tab",
+    "visibleImages": 1,
+    "visiblePanels": 1
+  },
+  {
+    "naturalWidth": 1901,
+    "overflow": 0,
+    "ratioError": 0.00004857266699609397,
+    "selected": "الصلاحيات",
+    "source": "assets/screenshots/namaa-rbac-users.webp",
+    "test": "desktop-tab",
+    "visibleImages": 1,
+    "visiblePanels": 1
+  },
+  {
+    "active": "tab-dashboard",
+    "selected": "tab-dashboard",
+    "test": "tab-keyboard-home"
+  },
+  {
+    "active": "tab-pos",
+    "selected": "tab-pos",
+    "test": "tab-keyboard-rtl-left"
+  },
+  {
+    "active": "tab-rbac",
+    "selected": "tab-rbac",
+    "test": "tab-keyboard-end"
+  },
+  {
+    "focus": "إغلاق الصورة",
+    "open": true,
+    "rect": {
+      "bottom": 869.7375335693359,
+      "height": 739.4750366210938,
+      "left": 60,
+      "right": 1380,
+      "top": 130.2624969482422,
+      "width": 1320,
+      "x": 60,
+      "y": 130.2624969482422
+    },
+    "screen": {
+      "height": 1000,
+      "width": 1440
+    },
+    "test": "desktop-modal-fit"
+  },
+  {
+    "bodyLocked": false,
+    "focus": "تكبير صورة المستخدمين والصلاحيات",
+    "open": false,
+    "test": "modal-escape-restores-focus"
+  },
+  {
+    "expanded": "true",
+    "overflow": 0,
+    "panelHidden": false,
+    "test": "mobile-menu-open"
+  },
+  {
+    "expanded": "false",
+    "focus": "فتح القائمة",
+    "panelHidden": true,
+    "test": "mobile-menu-escape"
+  },
+  {
+    "faqTop": 93,
+    "focus": "faq",
+    "hash": "#faq",
+    "panelHidden": true,
+    "test": "mobile-menu-link-scroll"
+  },
+  {
+    "buttons": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل نماء يعمل بدون إنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تخصيص نماء لنشاطي؟"
+      }
+    ],
+    "test": "faq-click"
+  },
+  {
+    "buttons": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "هل نماء يعمل بدون إنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تخصيص نماء لنشاطي؟"
+      }
+    ],
+    "test": "faq-click"
+  },
+  {
+    "buttons": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل نماء يعمل بدون إنترنت؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل يمكن تخصيص نماء لنشاطي؟"
+      }
+    ],
+    "test": "faq-click"
+  },
+  {
+    "buttons": [
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "شو هو نماء؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل نماء يعمل بدون إنترنت؟"
+      },
+      {
+        "answerHidden": true,
+        "expanded": "false",
+        "question": "هل أقدر أحدد صلاحيات الموظفين؟"
+      },
+      {
+        "answerHidden": false,
+        "expanded": "true",
+        "question": "هل يمكن تخصيص نماء لنشاطي؟"
+      }
+    ],
+    "test": "faq-click"
+  },
+  {
+    "expanded": "false",
+    "hidden": true,
+    "test": "faq-keyboard-toggle"
+  },
+  {
+    "naturalWidth": 0,
+    "overflow": 0,
+    "ratioError": null,
+    "source": "assets/screenshots/namaa-dashboard-mobile.webp",
+    "tab": "tab-dashboard",
+    "test": "mobile-screen",
+    "visibleImages": 1
+  },
+  {
+    "naturalWidth": 356,
+    "overflow": 0,
+    "ratioError": 0.000021435080598763975,
+    "source": "assets/screenshots/namaa-pos-mobile.webp",
+    "tab": "tab-pos",
+    "test": "mobile-screen",
+    "visibleImages": 1
+  },
+  {
+    "naturalWidth": 353,
+    "overflow": 0,
+    "ratioError": 4.186617684198702e-7,
+    "source": "assets/screenshots/namaa-items-mobile.webp",
+    "tab": "tab-inventory",
+    "test": "mobile-screen",
+    "visibleImages": 1
+  },
+  {
+    "open": true,
+    "rect": {
+      "bottom": 819.8000373840332,
+      "height": 795.6000366210938,
+      "left": 12,
+      "right": 378.3999938964844,
+      "top": 24.200000762939453,
+      "width": 366.3999938964844,
+      "x": 12,
+      "y": 24.200000762939453
+    },
+    "screen": {
+      "height": 844,
+      "width": 390
+    },
+    "source": "assets/screenshots/namaa-items-mobile.webp",
+    "test": "mobile-modal-fit"
+  },
+  {
+    "focus": "screenshot-original-link",
+    "test": "dialog-keyboard-tab"
+  },
+  {
+    "focus": null,
+    "test": "dialog-focus-wrap"
+  },
+  {
+    "focus": "إغلاق الصورة",
+    "tag": "BUTTON",
+    "test": "modal-focus-wrap-after-fix"
+  },
+  {
+    "focus": "screenshot-original-link",
+    "test": "modal-reverse-focus-wrap"
+  },
+  {
+    "naturalWidth": 352,
+    "overflow": 0,
+    "ratioError": 0.000004471774306569198,
+    "source": "assets/screenshots/namaa-dashboard-mobile.webp",
+    "test": "mobile-dashboard-visible-and-loaded"
+  }
+]

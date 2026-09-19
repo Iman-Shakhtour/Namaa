@@ -1,0 +1,22 @@
+[
+  {
+    "test": "pending-product-and-unapproved-price",
+    "featuredCount": 4,
+    "pendingVisible": false,
+    "printerPrice": "استفسر عن السعر",
+    "tutorialCards": 1,
+    "tutorialLink": "https://example.com/tutorial",
+    "tutorialSection": true
+  },
+  {
+    "test": "expanded-pending-filter",
+    "optionCount": 9,
+    "pendingVisible": false,
+    "printerPrice": "استفسر عن السعر"
+  },
+  {
+    "test": "invalid-video-url",
+    "tutorialCards": 0,
+    "tutorialSection": false
+  }
+]

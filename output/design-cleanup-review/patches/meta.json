@@ -1,0 +1,160 @@
+[
+  {
+    "id": "bento-pos",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/bento-pos.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "واجهة نقطة البيع الحقيقية في نماء",
+        "height": 190,
+        "left": 556.7999877929688,
+        "top": 448.6499938964844,
+        "width": 710.4000244140625
+      }
+    ],
+    "scrollY": 1048.800048828125
+  },
+  {
+    "id": "bento-inventory",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/bento-inventory.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "قائمة الأصناف الحقيقية في نماء على الهاتف",
+        "height": 190,
+        "left": 172.8000030517578,
+        "top": 448.6499938964844,
+        "width": 326.3999938964844
+      }
+    ],
+    "scrollY": 1048.800048828125
+  },
+  {
+    "id": "bento-profit",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/bento-profit.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "أرقام تقرير الأرباح الحقيقي في نماء",
+        "height": 190,
+        "left": 940.7999877929688,
+        "top": 448.6499938964844,
+        "width": 326.3999938964844
+      }
+    ],
+    "scrollY": 1404.800048828125
+  },
+  {
+    "id": "bento-accounts",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/bento-accounts.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "لوحة نماء التي تعرض أرصدة الصندوق والحسابات",
+        "height": 190,
+        "left": 556.7999877929688,
+        "top": 448.6499938964844,
+        "width": 326.3999938964844
+      }
+    ],
+    "scrollY": 1404.800048828125
+  },
+  {
+    "id": "bento-customers",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/bento-customers.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "بطاقات الأرصدة في لوحة تحكم نماء",
+        "height": 190,
+        "left": 556.7999877929688,
+        "top": 448.6499938964844,
+        "width": 710.4000244140625
+      }
+    ],
+    "scrollY": 1760.800048828125
+  },
+  {
+    "id": "showcase",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/showcase.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "نقطة البيع في نماء",
+        "height": 405.2875061035156,
+        "left": 152.8000030517578,
+        "top": 341.75,
+        "width": 721.7625122070312
+      }
+    ],
+    "scrollY": 2466.39990234375
+  },
+  {
+    "id": "reports",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/reports.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "تقرير الأرباح في نماء يعرض مبيعات 1,200 وتكلفة 480 وصافي ربح 720",
+        "height": 378.5375061035156,
+        "left": 152.8000030517578,
+        "top": 374.9375,
+        "width": 672.9625244140625
+      }
+    ],
+    "scrollY": 3597.60009765625
+  },
+  {
+    "id": "permissions",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/permissions.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "جدول صلاحيات المدير والمحاسب والكاشير والمستودعجي مع حجب أسماء الدخول",
+        "height": 378.5375061035156,
+        "left": 152.8000030517578,
+        "top": 374.2749938964844,
+        "width": 672.9625244140625
+      }
+    ],
+    "scrollY": 4202.39990234375
+  },
+  {
+    "id": "hardware",
+    "path": "C:/Users/User/Namaa/output/design-cleanup-review/patches/hardware.png",
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "rects": [
+      {
+        "alt": "قارئ باركود سلكي مع حامل — صورة المنتج من Logix Mobile",
+        "height": 220,
+        "left": 920.7999877929688,
+        "top": 662.9125366210938,
+        "width": 366.3999938964844
+      },
+      {
+        "alt": "قارئ باركود لاسلكي مع قاعدة شحن — صورة المنتج من Logix Mobile",
+        "height": 220,
+        "left": 536.7999877929688,
+        "top": 662.9125366210938,
+        "width": 366.3999938964844
+      },
+      {
+        "alt": "طابعة فواتير Xprinter XP-N160II — صورة المنتج من Logix Mobile",
+        "height": 220,
+        "left": 152.8000030517578,
+        "top": 662.9125366210938,
+        "width": 366.3999938964844
+      }
+    ],
+    "scrollY": 5360.7998046875
+  }
+]

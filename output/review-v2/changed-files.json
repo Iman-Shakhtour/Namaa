@@ -1,0 +1,24 @@
+{
+  "modified": [
+    "README.md",
+    "css/style.css",
+    "index.html",
+    "js/hardware-data.js",
+    "js/main.js"
+  ],
+  "added": [
+    "assets/hardware/barcode-labels.webp",
+    "assets/hardware/desktop-2d-scanner.webp",
+    "assets/hardware/haixun-scanner.webp",
+    "assets/hardware/rugged-scanner.webp",
+    "assets/hardware/scanner-stand.webp",
+    "assets/hardware/thermal-paper.webp",
+    "assets/hardware/wired-scanner.webp",
+    "assets/hardware/wireless-scanner.webp",
+    "assets/hardware/xprinter-n160ii.webp",
+    "js/tutorials-data.js",
+    "DELIVERY.md"
+  ],
+  "removed": [],
+  "basis": "Current project before this review, not the earlier original long landing page"
+}

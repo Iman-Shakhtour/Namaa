@@ -1,0 +1,58 @@
+{
+  "status": "pass",
+  "whatsappNumber": "+972592425106",
+  "whatsappLinks": 7,
+  "countdownDeadline": "2026-12-31T23:59:59+02:00",
+  "countdownResetPerVisitor": false,
+  "desktopOnlyScreenshots": true,
+  "newScreenshots": {
+    "namaa-pos-current.webp": [
+      1919,
+      866
+    ],
+    "namaa-inventory-current.webp": [
+      1919,
+      867
+    ],
+    "namaa-profit-current.webp": [
+      1901,
+      870
+    ],
+    "namaa-accounting-current.webp": [
+      1918,
+      868
+    ],
+    "namaa-customers-current.webp": [
+      1919,
+      868
+    ],
+    "namaa-sync-offline-full.webp": [
+      1919,
+      872
+    ],
+    "namaa-sync-pending-full.webp": [
+      1916,
+      870
+    ],
+    "namaa-sync-complete-full.webp": [
+      1919,
+      875
+    ]
+  },
+  "localReferencesChecked": 23,
+  "desktopVisualReview": [
+    "hero",
+    "features",
+    "sync",
+    "pricing"
+  ],
+  "responsiveRulesReviewed": [
+    320,
+    360,
+    390,
+    430,
+    768,
+    1024,
+    1440
+  ]
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "clientWidth": 305,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "272.8px",
+    "heroColumns": "272.8px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 9350,
+    "scrollWidth": 305,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 320,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  },
+  {
+    "clientWidth": 345,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "312.8px",
+    "heroColumns": "312.8px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 8602,
+    "scrollWidth": 345,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 360,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  },
+  {
+    "clientWidth": 375,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "343.2px",
+    "heroColumns": "343.2px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 8366,
+    "scrollWidth": 375,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 390,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  },
+  {
+    "clientWidth": 415,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "375.2px",
+    "heroColumns": "375.2px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 8331,
+    "scrollWidth": 415,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 430,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  },
+  {
+    "clientWidth": 753,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "337.4px 337.4px",
+    "heroColumns": "688.8px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 6643,
+    "scrollWidth": 753,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 768,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  },
+  {
+    "clientWidth": 1009,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "225.7px 225.7px 225.7px 225.7px",
+    "heroColumns": "944.8px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 6610,
+    "scrollWidth": 1009,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 1024,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  },
+  {
+    "clientWidth": 1425,
+    "faqCount": 5,
+    "hardwareCards": 4,
+    "hardwareColumns": "293.5px 293.5px 293.5px 293.5px",
+    "heroColumns": "470.4px 705.6px",
+    "overflow": 0,
+    "overflowing": [],
+    "pageHeight": 6302,
+    "scrollWidth": 1425,
+    "sectionCount": 8,
+    "smallTargets": [],
+    "tutorialsVisible": false,
+    "whatsappVisible": false,
+    "width": 1440,
+    "expandedHardware": {
+      "options": 9,
+      "optionsHidden": false,
+      "overflow": 0,
+      "printerPrices": [
+        "استفسر عن السعر",
+        "استفسر عن السعر"
+      ],
+      "textOverflow": 0
+    }
+  }
+]

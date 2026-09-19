@@ -1,0 +1,18 @@
+{
+  "modified": [
+    "index.html",
+    "css/style.css",
+    "js/main.js",
+    "README.md",
+    "DELIVERY.md"
+  ],
+  "added": [
+    "assets/media/namaa-product-tour.webm",
+    "assets/media/namaa-product-tour-mobile.webm",
+    "assets/screenshots/namaa-pos-focus.webp",
+    "assets/screenshots/namaa-inventory-focus.webp",
+    "assets/screenshots/namaa-profit-focus.webp",
+    "assets/screenshots/namaa-accounts-focus.webp",
+    "assets/screenshots/namaa-rbac-users-public.webp"
+  ]
+}

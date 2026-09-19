@@ -1,0 +1,310 @@
+{
+  "package": "Namaa-website-update-20260919",
+  "files": [
+    {
+      "path": "apple-touch-icon.png",
+      "bytes": 23243,
+      "sha256": "ae41fdd5f1706d0ec72981470aaaa8685b9e32c029b28d99104d97e5a2583ab4"
+    },
+    {
+      "path": "assets/brand/favicon-192.png",
+      "bytes": 25869,
+      "sha256": "e65d8c66318241238abcf1bbf4333794d02c43d816f46bc8f8faed2b2322bfab"
+    },
+    {
+      "path": "assets/brand/favicon-32.png",
+      "bytes": 1889,
+      "sha256": "13ffdf24d7a300d880e5995f7e432e58a1a0db13ee74a2d338bf9b2f6d35e356"
+    },
+    {
+      "path": "assets/brand/favicon-512.png",
+      "bytes": 122260,
+      "sha256": "bf98824ccd9f594781af4fc1cfb00aacb102faf9671397b29821cc3a780ce968"
+    },
+    {
+      "path": "assets/brand/icon-mark.webp",
+      "bytes": 7072,
+      "sha256": "ee65c7ac8ffa37a9f20f637588a44677f5296fd2d533d0012f94f4d941ec2f92"
+    },
+    {
+      "path": "assets/brand/logo-lockup-dark.webp",
+      "bytes": 38162,
+      "sha256": "d4bb6174ee594368d7905d70b83ae8fb991acb946ed47cdc7ef776df19f2005c"
+    },
+    {
+      "path": "assets/brand/logo-lockup-light.webp",
+      "bytes": 31878,
+      "sha256": "11e8819a6088e5723f75f3dd4fc123e656e34394a75a1dae21b2590187f437c3"
+    },
+    {
+      "path": "assets/hardware/barcode-labels.webp",
+      "bytes": 34518,
+      "sha256": "2f713494f25dfc0fd871c4181713c4ba46c1790b089a68c050983f79e3b5d8ba"
+    },
+    {
+      "path": "assets/hardware/desktop-2d-scanner.webp",
+      "bytes": 15548,
+      "sha256": "a720a9a37aadef1f05a4def46c68ed6e3389c4f59ac632a87aa5b3dbae12ee52"
+    },
+    {
+      "path": "assets/hardware/haixun-scanner.webp",
+      "bytes": 23032,
+      "sha256": "d5f07b07b15c6de5f3e1ead8379ad6eadd170225fc6fbe13cfb2c66799983996"
+    },
+    {
+      "path": "assets/hardware/rugged-scanner.webp",
+      "bytes": 23258,
+      "sha256": "2dcb3fbdc8e133f447c95cacc9c80505ce60c07028e59cb29c3e61427d4a908c"
+    },
+    {
+      "path": "assets/hardware/scanner-stand.webp",
+      "bytes": 11676,
+      "sha256": "c0dc9170423ec013bf8e04232ebfb3fbfbbb2cba256822c54fad5996bcf5dad1"
+    },
+    {
+      "path": "assets/hardware/thermal-paper.webp",
+      "bytes": 19736,
+      "sha256": "948cef666a117de90822609336e475bbb665331279641bdc0c546766866299ba"
+    },
+    {
+      "path": "assets/hardware/wired-scanner.webp",
+      "bytes": 18980,
+      "sha256": "f30bdad71b34a85f8e169cafab24f9cddb80484e333928fa5ead7e025e0d0b50"
+    },
+    {
+      "path": "assets/hardware/wireless-scanner.webp",
+      "bytes": 21536,
+      "sha256": "24c03bf5ab94be5920519f2baa57db57a9b991822ee94cb9bcc429b9b3b0f35f"
+    },
+    {
+      "path": "assets/hardware/xprinter-n160ii.webp",
+      "bytes": 21022,
+      "sha256": "41cb728ca1a0e197c6d68900e2c26027cc1b088974675f3ce3286017b9ee3e9c"
+    },
+    {
+      "path": "assets/media/namaa-product-tour-mobile.webm",
+      "bytes": 282376,
+      "sha256": "486a66933fdc96f3517e039185a51c196943b2ea86195d01d29603f189e3df8a"
+    },
+    {
+      "path": "assets/media/namaa-product-tour.webm",
+      "bytes": 613241,
+      "sha256": "6db646c154fd9a65be8f78fa37a0b5c1d5f848ecd8c44947f6019c49abb0ff15"
+    },
+    {
+      "path": "assets/screenshots/namaa-accounting-current.webp",
+      "bytes": 61968,
+      "sha256": "d73abb819ce390cdff0c961aa646759872b3303cdaf5554bae51a824c52848cc"
+    },
+    {
+      "path": "assets/screenshots/namaa-accounts-focus.webp",
+      "bytes": 30410,
+      "sha256": "60f862a7c8f130fd9c8d7c8d94845d1d707c762788ad031312b36c8beaada6f0"
+    },
+    {
+      "path": "assets/screenshots/namaa-customers-current.webp",
+      "bytes": 60370,
+      "sha256": "8d561ef93c45b1a3cc5cc7f87b5dd526d0a15a80e716cbffb8de077a0e6c6ff8"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-desktop-1280.webp",
+      "bytes": 43296,
+      "sha256": "1749dcd232f37f7d9a9e5cd75a8f3a0fbf9282a6b9b7b8cb543ec16530c29973"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-desktop-640.webp",
+      "bytes": 17166,
+      "sha256": "6a16b6b9689bd24b7305d6f809fc6902feb9c5adb436b6715ef5cf41f86b200f"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-desktop.webp",
+      "bytes": 70746,
+      "sha256": "de8b3a622c485a19ce916c5c22b7e90cd70ffa9585bf5a8c855a72e916d4d13c"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-hero-16x9.webp",
+      "bytes": 20334,
+      "sha256": "04a0aca7493da029c379c3362bbcaafd1e5dcc5abd5f374704da0cec2a1b635a"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-hero-640.webp",
+      "bytes": 22862,
+      "sha256": "c049556a31827bfc27a5cc4f850a96e2dffe51d3ba6c98b88356bfc2a676f54a"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-hero.webp",
+      "bytes": 32382,
+      "sha256": "7b62e971290b103bf917b5038d448d48d31ecd0b874992d0940a795a2af704cd"
+    },
+    {
+      "path": "assets/screenshots/namaa-dashboard-mobile.webp",
+      "bytes": 21672,
+      "sha256": "df167f2f5e3dc65c78897cdde1d714e68efd9c13c483df6ab03c78a740793944"
+    },
+    {
+      "path": "assets/screenshots/namaa-inventory-current.webp",
+      "bytes": 49178,
+      "sha256": "0c397e67ec018890b08837dc17e749ce4f0fac3f8d26703fb3848540290cf85b"
+    },
+    {
+      "path": "assets/screenshots/namaa-inventory-desktop.webp",
+      "bytes": 49178,
+      "sha256": "0c397e67ec018890b08837dc17e749ce4f0fac3f8d26703fb3848540290cf85b"
+    },
+    {
+      "path": "assets/screenshots/namaa-inventory-focus.webp",
+      "bytes": 30388,
+      "sha256": "5eb01ee72714f0caa1d214c9883f6da63e2d47bc4153eca04e77e8b1d13c38b1"
+    },
+    {
+      "path": "assets/screenshots/namaa-items-mobile-focus.webp",
+      "bytes": 8802,
+      "sha256": "5303adfdaf00fdeadc23a65c8552422ea3c6dcc67ac8ecbf6c3a0b2dfd07e6b4"
+    },
+    {
+      "path": "assets/screenshots/namaa-items-mobile.webp",
+      "bytes": 15202,
+      "sha256": "b4e5fec1ea71128957eeb68a1ce9e62f0678c513ec9e0a31fdb8e81d92941181"
+    },
+    {
+      "path": "assets/screenshots/namaa-pos-current.webp",
+      "bytes": 57014,
+      "sha256": "272e3d9f8ea7716b6e5e15a162687a9c82e34c709262bdf744a8db9fb86bda22"
+    },
+    {
+      "path": "assets/screenshots/namaa-pos-desktop.webp",
+      "bytes": 57014,
+      "sha256": "272e3d9f8ea7716b6e5e15a162687a9c82e34c709262bdf744a8db9fb86bda22"
+    },
+    {
+      "path": "assets/screenshots/namaa-pos-focus.webp",
+      "bytes": 26866,
+      "sha256": "653b730a367b722b688990eec9437bf09aaec1be63b1b2ba946124080d97ef80"
+    },
+    {
+      "path": "assets/screenshots/namaa-pos-mobile.webp",
+      "bytes": 15464,
+      "sha256": "9f2e16c419d5c3bf2c0e9882b2b6b82c1ee8e25bddb035f849926ceb8c3879ca"
+    },
+    {
+      "path": "assets/screenshots/namaa-profit-16x9.webp",
+      "bytes": 77292,
+      "sha256": "5e1da028235010de292098d7c403bdf0887a00114e70746ff7abbe25c08802b8"
+    },
+    {
+      "path": "assets/screenshots/namaa-profit-current.webp",
+      "bytes": 77292,
+      "sha256": "5e1da028235010de292098d7c403bdf0887a00114e70746ff7abbe25c08802b8"
+    },
+    {
+      "path": "assets/screenshots/namaa-profit-focus.webp",
+      "bytes": 32716,
+      "sha256": "0fdc0e318e806999cc381128a0ce33a9322d8334ff520a98e7854b9f63ec400d"
+    },
+    {
+      "path": "assets/screenshots/namaa-profit-report.webp",
+      "bytes": 95474,
+      "sha256": "964587d6cb01d201d6ced9c89e0aecf6fa0fb79b88233159d7582a1aa096accb"
+    },
+    {
+      "path": "assets/screenshots/namaa-rbac-focus.webp",
+      "bytes": 34696,
+      "sha256": "5796b7e414eaed705c772ba5d224103852050ce40f0653d0bac65065eabe839e"
+    },
+    {
+      "path": "assets/screenshots/namaa-rbac-users-public.webp",
+      "bytes": 67260,
+      "sha256": "62c8e8c83c0f9622352b9c1321d1af6d84e0f9d069e08d5063b91c1e180b17ac"
+    },
+    {
+      "path": "assets/screenshots/namaa-rbac-users-sanitized.png",
+      "bytes": 174209,
+      "sha256": "269d74f0e9b73d0055b68fb3b51c92201bffc80400a7e9ea273ae1e47490a24c"
+    },
+    {
+      "path": "assets/screenshots/namaa-rbac-users.webp",
+      "bytes": 90210,
+      "sha256": "5ef4e6ef44236a3293cd714d33ddb31d0aba24f8c514072ef495b438e203f08f"
+    },
+    {
+      "path": "assets/screenshots/namaa-sync-complete-full.webp",
+      "bytes": 36428,
+      "sha256": "905f4de7f74150d846122ae4bb025314465404126738783e033e89387aceb545"
+    },
+    {
+      "path": "assets/screenshots/namaa-sync-complete.webp",
+      "bytes": 7606,
+      "sha256": "5fdd574ffb52f9d2ba37146359f42e676cd3210192e0b13201e22df73cdde0b5"
+    },
+    {
+      "path": "assets/screenshots/namaa-sync-offline-full.webp",
+      "bytes": 37244,
+      "sha256": "a8ae65e075ac71f5bd60f3f604f8e2a057b2464ff8b27f3f25818db38f32531f"
+    },
+    {
+      "path": "assets/screenshots/namaa-sync-offline.webp",
+      "bytes": 7386,
+      "sha256": "56532c213e63923f46d9c18d724681af84b63edc9e22779b053bb58cc8e98ea7"
+    },
+    {
+      "path": "assets/screenshots/namaa-sync-pending-full.webp",
+      "bytes": 36184,
+      "sha256": "4585df6fc4baf9511654ad29bdb198c8a8ebe60ffb5ba0e9869fddc11a38803a"
+    },
+    {
+      "path": "assets/screenshots/namaa-sync-pending.webp",
+      "bytes": 7950,
+      "sha256": "5b6017c0f51604e6d940e95c1576ac9e936836ebb67a14f77d524c06643eeaed"
+    },
+    {
+      "path": "css/style.css",
+      "bytes": 26539,
+      "sha256": "7b22b7d446c7af139f9ea58898a03a1f8faf60160b220412508b92869e4d41af"
+    },
+    {
+      "path": "DELIVERY.md",
+      "bytes": 5672,
+      "sha256": "23427e327b4c80548a91faf73278620429682d75594645b1e43e2949eaff6d91"
+    },
+    {
+      "path": "favicon.ico",
+      "bytes": 21238,
+      "sha256": "19248d8b57a670a1803f121265ba4311af0b09bea77a2d8435c56f006d575c5e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 43686,
+      "sha256": "49abffd3b81cd2070893ba5c0c84b38d552deb94a78fcceb4607a8f8444d8bde"
+    },
+    {
+      "path": "js/hardware-data.js",
+      "bytes": 5783,
+      "sha256": "6fe2f4619315b323555c4263056ba1ab8ea1f1792b1bbf210e0d80c8c35cd036"
+    },
+    {
+      "path": "js/main.js",
+      "bytes": 11589,
+      "sha256": "4677cb9b7c861ba8374954b9146458a4477a49baa90f86e40590a5a58e2bc174"
+    },
+    {
+      "path": "js/site-config.js",
+      "bytes": 198,
+      "sha256": "c7e2fdabdb82cfabbb4986213cff50db2c9364560bad8c55025744115b180829"
+    },
+    {
+      "path": "js/tutorials-data.js",
+      "bytes": 255,
+      "sha256": "d97660f5f32cf8383855be28c29b9c72ecc683bbc4905bd3f93c1a7f60c2c8b9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3571,
+      "sha256": "3d4bca7129b043c0cf9bb0913f757bd8ffc3ccf4e56d93a3caaac01c7d13e21f"
+    },
+    {
+      "path": "review/qa.json",
+      "bytes": 1034,
+      "sha256": "1fdf2814120e046ccb923adb8023afc40bfe96363e6c591ac464922d0566ae93"
+    }
+  ]
+}

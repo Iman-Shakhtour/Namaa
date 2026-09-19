@@ -1,0 +1,237 @@
+/* Namaa premium website interactions: light, accessible and dependency-free. */
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var header = document.querySelector('.site-header');
+  function updateHeader() {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 10);
+  }
+  document.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  var hamburger = document.querySelector('.hamburger');
+  var mobilePanel = document.getElementById('mobile-panel');
+  function closeMenu(restoreFocus) {
+    if (!hamburger || !mobilePanel) return;
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'فتح القائمة');
+    mobilePanel.hidden = true;
+    if (restoreFocus) hamburger.focus();
+  }
+  if (hamburger && mobilePanel) {
+    hamburger.addEventListener('click', function () {
+      var open = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!open));
+      hamburger.setAttribute('aria-label', open ? 'فتح القائمة' : 'إغلاق القائمة');
+      mobilePanel.hidden = open;
+    });
+    mobilePanel.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { closeMenu(false); });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !mobilePanel.hidden) closeMenu(true);
+    });
+    document.addEventListener('click', function (event) {
+      if (!mobilePanel.hidden && header && !header.contains(event.target)) closeMenu(false);
+    });
+    window.matchMedia('(min-width: 1100px)').addEventListener('change', function (event) {
+      if (event.matches) closeMenu(false);
+    });
+  }
+
+  /* The video uses only the supplied product screenshots. Keep the real poster if it cannot load. */
+  var heroMedia = document.querySelector('[data-hero-media]');
+  var heroVideos = heroMedia ? Array.from(heroMedia.querySelectorAll('video')) : [];
+  if (heroVideos.length) {
+    function usePoster() { heroMedia.classList.add('is-fallback'); }
+    var mobileVideoQuery = window.matchMedia('(max-width: 767px)');
+    function syncHeroVideo() {
+      if (reduceMotion.matches) {
+        heroVideos.forEach(function (video) { video.pause(); });
+        usePoster();
+        return;
+      }
+      heroVideos.forEach(function (video) {
+        var shouldPlay = mobileVideoQuery.matches ? video.classList.contains('hero-media__video--mobile') : video.classList.contains('hero-media__video--desktop');
+        if (!shouldPlay) {
+          video.pause();
+          return;
+        }
+        var playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === 'function') playAttempt.catch(function () {});
+      });
+    }
+    heroVideos.forEach(function (heroVideo) {
+      heroVideo.addEventListener('error', usePoster);
+      heroVideo.querySelectorAll('source').forEach(function (source) { source.addEventListener('error', usePoster); });
+    });
+    mobileVideoQuery.addEventListener('change', syncHeroVideo);
+    syncHeroVideo();
+  }
+
+  /* Desktop product story follows the currently centered step. */
+  var storySteps = Array.from(document.querySelectorAll('[data-story-index]'));
+  var storyImages = Array.from(document.querySelectorAll('[data-story-image]'));
+  function setStory(index) {
+    storySteps.forEach(function (step, position) { step.classList.toggle('is-active', position === index); });
+    storyImages.forEach(function (image, position) { image.classList.toggle('is-active', position === index); });
+  }
+  if (storySteps.length && storyImages.length === storySteps.length && 'IntersectionObserver' in window) {
+    var storyObserver = new IntersectionObserver(function (entries) {
+      entries.filter(function (entry) { return entry.isIntersecting; }).sort(function (a, b) {
+        return b.intersectionRatio - a.intersectionRatio;
+      }).slice(0, 1).forEach(function (entry) { setStory(Number(entry.target.dataset.storyIndex)); });
+    }, { rootMargin: '-34% 0px -34% 0px', threshold: [0, .2, .5, .8] });
+    storySteps.forEach(function (step) { storyObserver.observe(step); });
+  }
+
+  /* Hardware remains a focused product rail: four relevant, approved items maximum. */
+  function trustedProductUrl(value) {
+    try {
+      var url = new URL(value);
+      return url.protocol === 'https:' && url.hostname === 'logix-mobile.com' && !url.username && !url.password ? url.href : '';
+    } catch (_) { return ''; }
+  }
+  var rail = document.getElementById('hardware-products');
+  var selectedIds = ['wired-scanner', 'wireless-scanner', 'scanner-stand', 'xprinter-n160ii'];
+  var hardware = (window.HARDWARE_PRODUCTS || []).filter(function (product) {
+    return product.approved === true && selectedIds.indexOf(product.id) !== -1 && trustedProductUrl(product.sourceUrl) && /^assets\/hardware\/[a-z0-9-]+\.webp$/.test(product.image);
+  }).sort(function (a, b) { return selectedIds.indexOf(a.id) - selectedIds.indexOf(b.id); });
+  if (rail) {
+    hardware.slice(0, 4).forEach(function (product) {
+      var article = document.createElement('article');
+      article.className = 'hardware-card';
+      var image = document.createElement('img');
+      image.src = product.image;
+      image.width = product.width;
+      image.height = product.height;
+      image.alt = product.name + ' — صورة المنتج من Logix Mobile';
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      var copy = document.createElement('div');
+      copy.className = 'hardware-card__copy';
+      var title = document.createElement('h3');
+      title.textContent = product.name;
+      var description = document.createElement('p');
+      description.textContent = product.description;
+      var price = document.createElement('p');
+      price.className = 'hardware-price';
+      price.textContent = product.approvedPrice === true && typeof product.price === 'number' ? product.price + ' ' + product.currency : 'السعر بانتظار الاعتماد';
+      var source = document.createElement('a');
+      source.className = 'hardware-product-link';
+      source.href = trustedProductUrl(product.sourceUrl);
+      source.target = '_blank';
+      source.rel = 'noopener noreferrer';
+      source.textContent = 'تفاصيل المنتج';
+      source.setAttribute('aria-label', 'تفاصيل ' + product.name + ' لدى Logix Mobile — يفتح في نافذة جديدة');
+      copy.append(title, description, price, source);
+      article.append(image, copy);
+      rail.appendChild(article);
+    });
+  }
+
+  /* Optional contact and social channels stay absent until real values are approved. */
+  var config = window.SITE_CONFIG || {};
+  var number = String(config.whatsappNumber || '').trim().replace(/[\s()+-]/g, '');
+  var hasWhatsApp = /^[1-9]\d{7,14}$/.test(number);
+  document.querySelectorAll('[data-whatsapp]').forEach(function (link) {
+    if (!hasWhatsApp) return;
+    link.href = 'https://wa.me/' + number;
+    link.hidden = false;
+  });
+
+  /* Tutorials are injected only after approved real links are supplied. */
+  var tutorials = (window.NAMAA_TUTORIALS || []).filter(function (tutorial) {
+    try {
+      var url = new URL(tutorial.url);
+      return tutorial.title && url.protocol === 'https:' && !url.username && !url.password;
+    } catch (_) { return false; }
+  });
+  var template = document.getElementById('tutorials-template');
+  var faq = document.getElementById('faq');
+  if (tutorials.length && template && faq) {
+    var section = template.content.firstElementChild.cloneNode(true);
+    tutorials.forEach(function (tutorial) {
+      var card = document.createElement('article');
+      card.className = 'tutorial-card';
+      var title = document.createElement('h3');
+      title.textContent = tutorial.title;
+      var description = document.createElement('p');
+      description.textContent = tutorial.description || '';
+      var watch = document.createElement('a');
+      watch.href = tutorial.url;
+      watch.className = 'btn btn-secondary';
+      watch.target = '_blank';
+      watch.rel = 'noopener noreferrer';
+      watch.textContent = 'شاهد الشرح';
+      card.append(title, description, watch);
+      section.querySelector('.tutorials-grid').appendChild(card);
+    });
+    faq.before(section);
+  }
+
+  var dialog = document.getElementById('screenshot-dialog');
+  var dialogImage = document.getElementById('screenshot-dialog-image');
+  var dialogTitle = document.getElementById('screenshot-dialog-title');
+  var originalLink = document.getElementById('screenshot-original-link');
+  var dialogOpener = null;
+  if (dialog && dialogImage && typeof dialog.showModal === 'function') {
+    document.querySelectorAll('[data-zoom]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var source = button.dataset.zoom;
+        var image = button.querySelector('img');
+        if (!source) return;
+        dialogOpener = button;
+        dialogImage.src = source;
+        dialogImage.alt = image ? image.alt : button.dataset.title;
+        dialogTitle.textContent = button.dataset.title || 'شاشة نماء';
+        originalLink.href = source;
+        document.body.classList.add('has-dialog');
+        dialog.showModal();
+      });
+    });
+    dialog.querySelector('.dialog-close').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target !== dialog) return;
+      var box = dialog.getBoundingClientRect();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      document.body.classList.remove('has-dialog');
+      dialogImage.removeAttribute('src');
+      if (dialogOpener) dialogOpener.focus({ preventScroll: true });
+    });
+  }
+
+  var faqButtons = document.querySelectorAll('.faq-item__q');
+  faqButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var open = button.getAttribute('aria-expanded') !== 'true';
+      faqButtons.forEach(function (other) {
+        var shouldOpen = other === button && open;
+        other.setAttribute('aria-expanded', String(shouldOpen));
+        var answer = document.getElementById(other.getAttribute('aria-controls'));
+        if (answer) answer.hidden = !shouldOpen;
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      var href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      var target = document.getElementById(href.slice(1));
+      if (!target) return;
+      event.preventDefault();
+      closeMenu(false);
+      var offset = header ? header.getBoundingClientRect().height : 0;
+      var top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      if (window.location.hash !== href) window.history.pushState(null, '', href);
+    });
+  });
+
+  var year = document.getElementById('current-year');
+  if (year) year.textContent = new Date().getFullYear();
+})();

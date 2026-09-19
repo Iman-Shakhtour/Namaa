@@ -1,0 +1,18 @@
+{
+  "pricing_section_exactly_unchanged": true,
+  "existing_screenshot_bytes_unchanged": true,
+  "hardware_products": 9,
+  "featured_hardware_cards": 4,
+  "approved_prices_match_brief": true,
+  "printer_price_hidden": true,
+  "cash_drawer_absent": true,
+  "hardware_images_local_webp_with_dimensions": true,
+  "hardware_sources_recorded": true,
+  "tutorials_empty": true,
+  "production_contact_empty": true,
+  "responsive_seven_widths_pass": true,
+  "interaction_evidence_valid": true,
+  "conditional_evidence_valid": true,
+  "build_configured": false,
+  "lint_configured": false
+}

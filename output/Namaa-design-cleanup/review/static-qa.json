@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "palette": [
+    "#07182F",
+    "#0D9368",
+    "#101828",
+    "#12B886",
+    "#667085",
+    "#E2E8E5",
+    "#E7F4EF",
+    "#F7F8F6",
+    "#FFFFFF"
+  ],
+  "bentoCards": 5,
+  "hardwareCards": 3,
+  "heroCrop": [
+    672,
+    378
+  ],
+  "desktopReview": [
+    1424,
+    8895
+  ],
+  "mobileReview": [
+    375,
+    12632
+  ],
+  "localAssetsChecked": 22,
+  "importantCount": 4
+}

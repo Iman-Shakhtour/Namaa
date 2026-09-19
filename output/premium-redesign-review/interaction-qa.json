@@ -1,0 +1,31 @@
+{
+  "desktopProductStory": {
+    "scrolledToStep": 3,
+    "activeImage": 3,
+    "passed": true
+  },
+  "screenshotDialog": {
+    "opened": true,
+    "closed": true,
+    "passed": true
+  },
+  "mobileMenu": {
+    "opened": true,
+    "ariaExpandedWhenOpen": true,
+    "escapeClosed": true,
+    "passed": true
+  },
+  "faq": {
+    "secondQuestionExpanded": true,
+    "firstQuestionCollapsed": true,
+    "passed": true
+  },
+  "videos": {
+    "desktopSeconds": 6.75,
+    "mobileSeconds": 6.75,
+    "onlyVisibleVariantPlays": true,
+    "passed": true
+  },
+  "rtl": true,
+  "reducedMotionFallback": "CSS and JavaScript pause videos and reveal the real poster image"
+}
