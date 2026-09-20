@@ -77,7 +77,7 @@
     });
   }
 
-  /* Hardware stays secondary: three relevant products maximum. */
+  /* Hardware: show 4 products initially with expand/collapse toggle. */
   function trustedProductUrl(value) {
     try {
       var url = new URL(value);
@@ -85,45 +85,89 @@
     } catch (_) { return ''; }
   }
   var rail = document.getElementById('hardware-products');
-  var selectedIds = ['wired-scanner', 'wireless-scanner', 'xprinter-n160ii'];
   var hardware = (window.HARDWARE_PRODUCTS || []).filter(function (product) {
-    return product.approved === true && selectedIds.indexOf(product.id) !== -1 && trustedProductUrl(product.sourceUrl) && /^assets\/hardware\/[a-z0-9-]+\.webp$/.test(product.image);
-  }).sort(function (a, b) { return selectedIds.indexOf(a.id) - selectedIds.indexOf(b.id); });
-  if (rail) {
-    hardware.slice(0, 3).forEach(function (product) {
+    return product.approved === true;
+  });
+  var INITIAL_VISIBLE = 4;
+  if (rail && hardware.length) {
+    /* Build all cards */
+    hardware.forEach(function (product, index) {
       var article = document.createElement('article');
       article.className = 'hardware-card';
+      if (index >= INITIAL_VISIBLE) {
+        article.classList.add('hardware-card--hidden');
+        article.setAttribute('aria-hidden', 'true');
+      }
+      var imageWrap = document.createElement('div');
+      imageWrap.className = 'hardware-card__img-wrap';
       var image = document.createElement('img');
-      image.src = product.image;
+      image.src = product.sourceImageUrl || product.image;
       image.width = product.width;
       image.height = product.height;
-      image.alt = product.name + ' — صورة المنتج من Logix Mobile';
-      image.loading = 'eager';
+      image.alt = product.name;
+      image.loading = index < INITIAL_VISIBLE ? 'eager' : 'lazy';
       image.decoding = 'async';
+      imageWrap.appendChild(image);
       var copy = document.createElement('div');
       copy.className = 'hardware-card__copy';
       var title = document.createElement('h3');
       title.textContent = product.name;
-      var description = document.createElement('p');
-      description.textContent = product.description;
-      var source = document.createElement('a');
-      source.className = 'hardware-product-link';
-      source.href = trustedProductUrl(product.sourceUrl);
-      source.target = '_blank';
-      source.rel = 'noopener noreferrer';
-      source.textContent = 'تفاصيل المنتج';
-      source.setAttribute('aria-label', 'تفاصيل ' + product.name + ' لدى Logix Mobile — يفتح في نافذة جديدة');
-      copy.append(title, description);
+      copy.appendChild(title);
       if (product.approvedPrice === true && typeof product.price === 'number') {
         var price = document.createElement('p');
         price.className = 'hardware-price';
-        price.textContent = product.price + ' ' + product.currency;
+        price.textContent = (product.featuredPricePrefix || '') + product.price + ' NIS';
         copy.appendChild(price);
       }
-      copy.appendChild(source);
-      article.append(image, copy);
+      var details = document.createElement('details');
+      details.className = 'hardware-details';
+      var summary = document.createElement('summary');
+      summary.className = 'hardware-details__summary';
+      summary.innerHTML = '<span>عرض المواصفات</span><svg class="hardware-details__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+      var desc = document.createElement('p');
+      desc.className = 'hardware-details__text';
+      desc.textContent = product.description;
+      details.append(summary, desc);
+      details.addEventListener('toggle', function () {
+        var span = summary.querySelector('span');
+        if (span) {
+          span.textContent = details.open ? 'إخفاء المواصفات' : 'عرض المواصفات';
+        }
+      });
+      copy.appendChild(details);
+      article.append(imageWrap, copy);
       rail.appendChild(article);
     });
+
+    /* Inject expand/collapse button only when there are hidden cards */
+    if (hardware.length > INITIAL_VISIBLE) {
+      var remaining = hardware.length - INITIAL_VISIBLE;
+      var expandWrap = document.createElement('div');
+      expandWrap.className = 'hardware-expand';
+      var expandBtn = document.createElement('button');
+      expandBtn.type = 'button';
+      expandBtn.className = 'btn btn-secondary hardware-expand__btn';
+      expandBtn.setAttribute('aria-expanded', 'false');
+      expandBtn.setAttribute('aria-controls', 'hardware-products');
+      expandBtn.textContent = 'عرض ' + remaining + ' منتج إضافي';
+      var expanded = false;
+      expandBtn.addEventListener('click', function () {
+        expanded = !expanded;
+        rail.querySelectorAll('.hardware-card--hidden').forEach(function (card) {
+          card.classList.toggle('hardware-card--visible', expanded);
+          card.setAttribute('aria-hidden', String(!expanded));
+        });
+        expandBtn.setAttribute('aria-expanded', String(expanded));
+        expandBtn.textContent = expanded
+          ? 'عرض أقل'
+          : 'عرض ' + remaining + ' منتج إضافي';
+        if (!expanded) {
+          rail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+      expandWrap.appendChild(expandBtn);
+      rail.after(expandWrap);
+    }
   }
 
   /* Tutorials are injected only after approved real links are supplied. */
@@ -219,6 +263,13 @@
 
   var year = document.getElementById('current-year');
   if (year) year.textContent = new Date().getFullYear();
+
+  /* Sync spots badge from data-spots-remaining attribute — edit only the HTML attribute. */
+  var launchCard = document.querySelector('[data-spots-remaining]');
+  if (launchCard) {
+    var spotsNum = document.getElementById('spots-num');
+    if (spotsNum) spotsNum.textContent = launchCard.dataset.spotsRemaining;
+  }
 
   /* The year-end offer uses one public deadline for everyone. */
   var countdown = document.querySelector('[data-offer-deadline]');
