@@ -299,4 +299,42 @@
     updateCountdown();
     timer = window.setInterval(updateCountdown, 1000);
   }
+
+  /* Interactive Cursor Spotlight Effects (Hardware-accelerated, disabled on touch/reduced-motion) */
+  if (!reduceMotion.matches && window.matchMedia('(hover: hover)').matches) {
+    /* 1. Hero ambient spotlight following cursor */
+    var hero = document.querySelector('.hero');
+    if (hero) {
+      var heroTicking = false;
+      hero.addEventListener('pointermove', function (e) {
+        if (!heroTicking) {
+          window.requestAnimationFrame(function () {
+            var rect = hero.getBoundingClientRect();
+            var x = Math.round(e.clientX - rect.left);
+            var y = Math.round(e.clientY - rect.top);
+            hero.style.setProperty('--hero-mouse-x', x + 'px');
+            hero.style.setProperty('--hero-mouse-y', y + 'px');
+            heroTicking = false;
+          });
+          heroTicking = true;
+        }
+      });
+      hero.addEventListener('pointerleave', function () {
+        hero.style.setProperty('--hero-mouse-x', '50%');
+        hero.style.setProperty('--hero-mouse-y', '35%');
+      });
+    }
+
+    /* 2. Why Namaa feature cards cursor spotlight */
+    var whyCards = document.querySelectorAll('.why-card');
+    whyCards.forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = Math.round(e.clientX - rect.left);
+        var y = Math.round(e.clientY - rect.top);
+        card.style.setProperty('--mouse-x', x + 'px');
+        card.style.setProperty('--mouse-y', y + 'px');
+      });
+    });
+  }
 })();
