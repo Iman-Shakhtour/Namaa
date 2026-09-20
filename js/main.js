@@ -116,7 +116,7 @@
       if (product.approvedPrice === true && typeof product.price === 'number') {
         var price = document.createElement('p');
         price.className = 'hardware-price';
-        price.textContent = (product.featuredPricePrefix || '') + product.price + ' NIS';
+        price.textContent = (product.featuredPricePrefix || '') + product.price + ' شيكل';
         copy.appendChild(price);
       }
       var details = document.createElement('details');
