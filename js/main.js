@@ -126,7 +126,7 @@
       summary.innerHTML = '<span>عرض المواصفات</span><svg class="hardware-details__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>';
       var desc = document.createElement('p');
       desc.className = 'hardware-details__text';
-      desc.textContent = product.description;
+      desc.textContent = product.details || product.description;
       details.append(summary, desc);
       details.addEventListener('toggle', function () {
         var span = summary.querySelector('span');

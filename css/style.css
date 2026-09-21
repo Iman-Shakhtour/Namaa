@@ -238,7 +238,7 @@ p,h1,h2,h3,h4,a,button{overflow-wrap:break-word}
 .hardware-details__summary:hover{background:#F0FDF9;border-color:var(--green)}
 .hardware-details__icon{transition:transform .2s ease;flex-shrink:0}
 .hardware-details[open] .hardware-details__icon{transform:rotate(180deg)}
-.hardware-details__text{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.6;padding:8px 10px;background:#F8FAFC;border-radius:var(--radius-sm)}
+.hardware-details__text{margin-top:10px;font-size:13.5px;color:#334155;line-height:1.65;padding:12px 14px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--radius-sm)}
 
 /* hidden/expanded states */
 .hardware-card--hidden{display:none}

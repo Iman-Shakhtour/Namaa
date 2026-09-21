@@ -1,4 +1,4 @@
-/* Verified against Logix Mobile product pages on 2026-09-16. Prices are separate from Namaa subscriptions. */
+/* Verified against Logix Mobile product pages on 2026-09-21. Prices and specs are separate from Namaa subscriptions. */
 window.HARDWARE_PRODUCTS = Object.freeze([
   {
     "id": "wired-scanner",
@@ -9,6 +9,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_4896b8e9d3090d27.webp?v=1786869067",
     "name": "قارئ باركود سلكي مع حامل",
     "description": "قارئ محمول مع حامل لبيئة البيع.",
+    "details": "قارئ باركود سلكي محمول مع حامل مكتبي مرن (Wired Handheld Barcode Scanner with Stand). يعمل بالتوصيل المباشر عبر منفذ USB، ويوفر خياري القراءة اليدوية بالضغط على الزر أو القراءة التلقائية الذكية عند تمرير المنتجات، مناسب لبيئات البيع والكاشير السريعة.",
     "price": 150,
     "currency": "NIS",
     "approved": true,
@@ -24,6 +25,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_b0672892499cd99f.webp?v=1786869959",
     "name": "قارئ HAIXUN سلكي مع قاعدة",
     "description": "توصيل USB مع حامل مكتبي.",
+    "details": "جهاز مسح ضوئي لرموز الباركود يعمل بالتوصيل المباشر عبر منفذ USB. يأتي مع حامل مكتبي مرن يدعم وضعية القراءة التلقائية الذكية (Hands-free) عند تمرير المنتجات، وهو مصمم لخدمة نقاط البيع والمحلات التجارية بكفاءة عالية وسرعة استجابة فائقة.",
     "price": 180,
     "currency": "NIS",
     "approved": true,
@@ -39,6 +41,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_fb17162d318fa91e.webp?v=1786870075",
     "name": "قارئ باركود سلكي مقاوم للصدمات",
     "description": "تصميم متين مع حامل مكتبي.",
+    "details": "جهاز مسح ضوئي للباركود يتميز بتصميم متين محاط بإطار مطاطي باللون البرتقالي لحمايته من السقوط والصدمات في بيئات العمل الشاقة. يعمل عبر منفذ USB ويأتي مع قاعدته المكتبية ليوفر خيار المسح اليدوي بالضغط على الزر أو المسح التلقائي المستمر، مما يجعله ممتازاً للمخازن، المستودعات، ونقاط البيع المزدحمة.",
     "price": 200,
     "currency": "NIS",
     "approved": true,
@@ -54,6 +57,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_51432f08f54b8b57.webp?v=1786868028",
     "name": "قارئ باركود مكتبي ثنائي الأبعاد",
     "description": "قراءة الباركود من سطح المكتب.",
+    "details": "قارئ باركود مكتبي ثنائي الأبعاد عالي الأداء (Desktop Omnidirectional 2D Barcode Scanner). يتيح المسح الشامل متعدد الاتجاهات لرموز الباركود العادية ورموز الاستجابة السريعة (QR Code) سواء من الملصقات الورقية أو مباشرة من شاشات الهواتف الذكية دون الحاجة لتوجيه يدوي.",
     "price": 350,
     "currency": "NIS",
     "approved": true,
@@ -69,6 +73,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_bd0c575380888fea.webp?v=1786870922",
     "name": "قارئ باركود لاسلكي مع قاعدة شحن",
     "description": "قاعدة للشحن ونقل البيانات.",
+    "details": "جهاز مسح ضوئي لاسلكي متطور يعمل بحرية حركة كاملة دون قيود الأسلاك. يأتي مع قاعدة مكتبية متعددة الوظائف تعمل كشاحن للجهاز وجهاز إرسال واستقبال للبيانات عبر USB، وتضم شاشة رقمية صغيرة مع أزرار للتحكم بالاقتران وتخزين البيانات ورفعها لاحقاً، مثالي للمستودعات الكبيرة والصيدليات والمعارض.",
     "price": 350,
     "currency": "NIS",
     "approved": true,
@@ -84,6 +89,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_3fc84af1b01b9654.webp?v=1786867854",
     "name": "حامل قارئ الباركود",
     "description": "حامل مكتبي للقارئ.",
+    "details": "حامل مكتبي مرن ومتين مخصص لأجهزة قراءة الباركود، يدعم تعديل زاوية الرؤية والارتفاع لتثبيت القارئ بوضعية مسح تلقائية بدون استخدام اليدين لتسريع حركة الكاشير والمبيعات.",
     "price": 30,
     "currency": "NIS",
     "approved": true,
@@ -99,6 +105,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260817_39aa15b7223496de.webp?v=1786952054",
     "name": "رول ورق حراري للفواتير",
     "description": "ورق حراري لطباعة الفواتير.",
+    "details": "رول ورق حراري مخصص لطابعات الفواتير ونقاط البيع (مقاس 80 مم)، يوفر طباعة واضحة ودقيقة وسريعة بدون الحاجة إلى حبر. مناسب للمحلات، نقاط الكاشير، المطاعم والمكاتب، ويتميز بنعومة وجودة عالية تحافظ على رأس الطباعة وتضمن ثبات النصوص.",
     "price": 5,
     "currency": "NIS",
     "approved": true,
@@ -117,6 +124,7 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260829_2abcff8719903a57.webp?v=1787985523",
     "name": "رول ليبل باركود",
     "description": "ملصقات لتنظيم باركود الأصناف.",
+    "details": "رول ملصقات باركود حرارية عالية الجودة متوفر بمقاس 60*40 مم، يحتوي كل رول على 2000 ملصق بقوة لصق ممتازة وسطح ناصع لطباعة باركود واضح يسهل قراءته بأي ماسح ضوئي، مخصص لتسعير وتصنيف أصناف المحل والمستودع.",
     "price": 30,
     "currency": "NIS",
     "approved": true,
@@ -128,15 +136,16 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "image": "assets/hardware/xprinter-n160ii.webp",
     "width": 480,
     "height": 640,
-    "sourceUrl": "https://logix-mobile.com/product.php?slug=xprinter-xp-n160ii",
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786868629",
     "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_e33100f7ff7f31f9.webp?v=1786868147",
     "name": "طابعة فواتير Xprinter XP-N160II",
     "description": "طابعة حرارية للفواتير والإيصالات.",
-    "price": null,
+    "details": "طابعة مدمجة وسريعة تعتمد على الحرارة لطباعة الفواتير دون حبر. تدعم ورق مقاس 80 مم ومزودة بقاطع آلي، وتُستخدم بشكل أساسي في نقاط البيع والكاشير بالمحلات والمطاعم.",
+    "price": 380,
     "currency": "NIS",
     "approved": true,
-    "approvedPrice": false,
+    "approvedPrice": true,
     "featured": true,
-    "alternateSourceUrl": "https://logix-mobile.com/product.php?slug=product-1786868629"
+    "alternateSourceUrl": "https://logix-mobile.com/product.php?slug=xprinter-xp-n160ii"
   }
 ].map(function (product) { return Object.freeze(product); }));
