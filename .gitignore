@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+node_modules/
+npm-debug.log*
+
+# Verification and temporary scratch files
+assets/screenshots/verify-*
+assets/screenshots/test-*
+assets/screenshots/motion-frame-*
+assets/screenshots/new/
+assets/hardware/*[0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.webp
+assets/coin-10-obverse.png
+assets/coin-10-reverse.png
+scratch/
+temp/
