@@ -776,27 +776,28 @@ p,h1,h2,h3,h4,a,button{overflow-wrap:break-word}
 }
 
 /* CTAs */
-.price-launch-ctas{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.price-launch-ctas{display:flex;width:100%;margin-top:28px}
 .btn-launch-primary{
   background:linear-gradient(135deg, #10B981 0%, #059669 100%);
   color:#FFFFFF;
   border:none;
   font-weight:900;
-  font-size:18px;
-  padding:18px 26px;
-  border-radius:14px;
-  box-shadow:0 8px 28px rgba(16,185,129,.45);
-  transition:all .2s ease;
+  font-size:20px;
+  padding:20px 32px;
+  border-radius:16px;
+  box-shadow:0 10px 32px rgba(16,185,129,.48);
+  transition:all .25s cubic-bezier(0.16, 1, 0.3, 1);
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:12px;
   text-decoration:none;
+  width:100%;
 }
 .btn-launch-primary:hover{
   background:linear-gradient(135deg, #059669 0%, #047857 100%);
-  box-shadow:0 12px 32px rgba(16,185,129,.6);
-  transform:translateY(-2px);
+  box-shadow:0 14px 40px rgba(16,185,129,.65);
+  transform:translateY(-3px);
   color:#FFFFFF;
 }
 .btn-launch-ghost{
