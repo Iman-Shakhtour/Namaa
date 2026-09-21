@@ -337,4 +337,326 @@
       });
     });
   }
+
+  /* 3. Lightweight Interactive Gold Coins Canvas (<3.5KB, 0 dependencies, auto-paused offscreen) */
+  (function () {
+    var canvas = document.getElementById('hero-coins-canvas');
+    var heroSection = document.querySelector('.hero');
+    if (!canvas || !heroSection || reduceMotion.matches) return;
+
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    var width = 0;
+    var height = 0;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var coins = [];
+    var sparks = [];
+    var isRunning = false;
+    var animId = null;
+    var mouse = { x: -9999, y: -9999, active: false };
+
+    function resize() {
+      var rect = heroSection.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    var isMobile = window.innerWidth < 768;
+    var COIN_COUNT = isMobile ? 10 : 18;
+
+    function getRandomX() {
+      if (isMobile) {
+        // On mobile, distribute 75% towards side flanks so center text remains crisp and readable
+        if (Math.random() < 0.75) {
+          return Math.random() < 0.5 
+            ? Math.random() * (width * 0.28) 
+            : width * 0.72 + Math.random() * (width * 0.28);
+        }
+      }
+      return Math.random() * (width || 800);
+    }
+
+    function createCoin(customY) {
+      var depth = 0.45 + Math.random() * 0.55;
+      var radius = (isMobile ? 11 + Math.random() * 9 : 13 + Math.random() * 12) * depth;
+      return {
+        x: getRandomX(),
+        y: customY !== undefined ? customY : (height ? height + Math.random() * 40 : 600),
+        radius: radius,
+        depth: depth,
+        baseVy: -(0.55 + Math.random() * 0.75) * depth,
+        vy: -(0.55 + Math.random() * 0.75) * depth,
+        vx: (Math.random() - 0.5) * 0.3,
+        swayAmp: 0.4 + Math.random() * 0.8,
+        swaySpeed: 0.015 + Math.random() * 0.02,
+        swayOffset: Math.random() * Math.PI * 2,
+        flipAngle: Math.random() * Math.PI * 2,
+        flipSpeed: (0.02 + Math.random() * 0.035) * (Math.random() < 0.5 ? 1 : -1),
+        tilt: (Math.random() - 0.5) * 0.35,
+        tiltSpeed: (Math.random() - 0.5) * 0.004,
+        opacity: (isMobile ? 0.3 + depth * 0.4 : 0.38 + depth * 0.48),
+        symbol: Math.random() < 0.7 ? '₪' : '✦'
+      };
+    }
+
+    function initCoins() {
+      coins = [];
+      for (var i = 0; i < COIN_COUNT; i++) {
+        coins.push(createCoin(Math.random() * (height || 700)));
+      }
+    }
+
+    function spawnBurst(originX, originY, count) {
+      var burstCount = count || 8;
+      for (var i = 0; i < burstCount; i++) {
+        var angle = (Math.PI * 2 * i) / burstCount + (Math.random() - 0.5);
+        var speed = 1.5 + Math.random() * 3.5;
+        sparks.push({
+          x: originX,
+          y: originY,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 1,
+          size: 2 + Math.random() * 3,
+          life: 1.0,
+          decay: 0.02 + Math.random() * 0.025,
+          color: Math.random() < 0.5 ? '#FCD34D' : '#F59E0B'
+        });
+      }
+      if (coins.length < COIN_COUNT + 5) {
+        var mini = createCoin(originY);
+        mini.x = originX;
+        mini.vx = (Math.random() - 0.5) * 4;
+        mini.vy = -(2 + Math.random() * 2);
+        mini.flipSpeed = 0.08 * (Math.random() < 0.5 ? 1 : -1);
+        coins.push(mini);
+      }
+    }
+
+    function drawCoin(c) {
+      ctx.save();
+      ctx.translate(c.x, c.y);
+      ctx.rotate(c.tilt);
+
+      var flipCos = Math.cos(c.flipAngle);
+      var scaleX = flipCos;
+      var absScaleX = Math.abs(flipCos);
+
+      ctx.globalAlpha = c.opacity;
+
+      // 3D Coin Edge thickness when rotating
+      var edgeWidth = c.radius * 0.16 * Math.sin(c.flipAngle);
+      if (Math.abs(edgeWidth) > 0.8 && absScaleX < 0.95) {
+        ctx.save();
+        ctx.scale(scaleX, 1);
+        ctx.beginPath();
+        ctx.ellipse(edgeWidth * 0.8, 0, c.radius, c.radius, 0, 0, Math.PI * 2);
+        ctx.fillStyle = '#92400E';
+        ctx.fill();
+        ctx.restore();
+      }
+
+      ctx.scale(scaleX, 1);
+
+      // Outer rim gradient
+      var rimGrad = ctx.createLinearGradient(-c.radius, -c.radius, c.radius, c.radius);
+      rimGrad.addColorStop(0, '#FDE68A');
+      rimGrad.addColorStop(0.5, '#F59E0B');
+      rimGrad.addColorStop(1, '#B45309');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
+      ctx.fillStyle = rimGrad;
+      ctx.fill();
+
+      // Outer highlight ring
+      ctx.lineWidth = Math.max(1, c.radius * 0.08);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+      ctx.stroke();
+
+      // Inner coin disc
+      var innerR = c.radius * 0.78;
+      var innerGrad = ctx.createRadialGradient(-innerR * 0.3, -innerR * 0.3, innerR * 0.1, 0, 0, innerR);
+      innerGrad.addColorStop(0, '#FBBF24');
+      innerGrad.addColorStop(0.7, '#D97706');
+      innerGrad.addColorStop(1, '#92400E');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, innerR, 0, Math.PI * 2);
+      ctx.fillStyle = innerGrad;
+      ctx.fill();
+
+      // Inner embossed border
+      ctx.lineWidth = Math.max(0.75, c.radius * 0.04);
+      ctx.strokeStyle = 'rgba(251, 191, 36, 0.75)';
+      ctx.stroke();
+
+      // Center currency emblem (₪ or ✦)
+      if (absScaleX > 0.32 && c.radius > 8) {
+        ctx.fillStyle = '#78350F';
+        ctx.font = 'bold ' + Math.round(innerR * 1.05) + 'px system-ui, -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(c.symbol, 0, 1);
+
+        ctx.fillStyle = 'rgba(254, 243, 199, 0.6)';
+        ctx.fillText(c.symbol, -0.6, 0.4);
+      }
+
+      // Sweeping sheen light reflection
+      var sheenX = Math.sin(c.flipAngle * 2) * c.radius;
+      var sheenGrad = ctx.createLinearGradient(sheenX - c.radius * 0.4, 0, sheenX + c.radius * 0.4, 0);
+      sheenGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+      sheenGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.35)');
+      sheenGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      ctx.beginPath();
+      ctx.arc(0, 0, innerR, 0, Math.PI * 2);
+      ctx.fillStyle = sheenGrad;
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    function update() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Update and draw sparks
+      for (var s = sparks.length - 1; s >= 0; s--) {
+        var sp = sparks[s];
+        sp.x += sp.vx;
+        sp.y += sp.vy;
+        sp.vy += 0.08;
+        sp.life -= sp.decay;
+        if (sp.life <= 0) {
+          sparks.splice(s, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.globalAlpha = sp.life;
+        ctx.fillStyle = sp.color;
+        ctx.beginPath();
+        ctx.arc(sp.x, sp.y, sp.size * sp.life, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Update and draw coins
+      for (var i = coins.length - 1; i >= 0; i--) {
+        var c = coins[i];
+
+        c.swayOffset += c.swaySpeed;
+        c.flipAngle += c.flipSpeed;
+        c.tilt += c.tiltSpeed;
+
+        c.x += c.vx + Math.sin(c.swayOffset) * c.swayAmp;
+        c.y += c.vy;
+
+        // Interaction with mouse/touch
+        if (mouse.active) {
+          var dx = c.x - mouse.x;
+          var dy = c.y - mouse.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          var repelDist = 135;
+          if (dist < repelDist && dist > 0.1) {
+            var force = (repelDist - dist) / repelDist;
+            c.vx += (dx / dist) * force * 1.5;
+            c.vy += (dy / dist) * force * 1.5;
+            c.flipSpeed += force * 0.02 * (Math.random() < 0.5 ? 1 : -1);
+          }
+        }
+
+        c.vx *= 0.94;
+        c.vy = c.vy * 0.94 + c.baseVy * 0.06;
+
+        // Reset if passed top
+        if (c.y < -c.radius * 2) {
+          if (coins.length > COIN_COUNT) {
+            coins.splice(i, 1);
+            continue;
+          }
+          c.y = height + c.radius + Math.random() * 25;
+          c.x = getRandomX();
+          c.vx = (Math.random() - 0.5) * 0.4;
+          c.vy = c.baseVy;
+        }
+
+        if (c.x < -c.radius * 2) c.x = width + c.radius;
+        else if (c.x > width + c.radius * 2) c.x = -c.radius;
+
+        drawCoin(c);
+      }
+
+      if (isRunning) {
+        animId = window.requestAnimationFrame(update);
+      }
+    }
+
+    function start() {
+      if (!isRunning) {
+        isRunning = true;
+        animId = window.requestAnimationFrame(update);
+      }
+    }
+
+    function stop() {
+      isRunning = false;
+      if (animId) {
+        window.cancelAnimationFrame(animId);
+        animId = null;
+      }
+    }
+
+    function onPointerMove(e) {
+      var rect = heroSection.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    }
+
+    function onPointerLeave() {
+      mouse.active = false;
+      mouse.x = -9999;
+      mouse.y = -9999;
+    }
+
+    function onPointerDown(e) {
+      var rect = heroSection.getBoundingClientRect();
+      var px = e.clientX - rect.left;
+      var py = e.clientY - rect.top;
+      spawnBurst(px, py, 10);
+    }
+
+    heroSection.addEventListener('pointermove', onPointerMove, { passive: true });
+    heroSection.addEventListener('pointerleave', onPointerLeave, { passive: true });
+    heroSection.addEventListener('pointerdown', onPointerDown, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            start();
+          } else {
+            stop();
+          }
+        });
+      }, { threshold: 0.05 });
+      observer.observe(heroSection);
+    } else {
+      start();
+    }
+
+    var resizeTimeout;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function () {
+        resize();
+      }, 150);
+    }, { passive: true });
+
+    resize();
+    initCoins();
+  })();
 })();
