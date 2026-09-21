@@ -366,15 +366,15 @@
     }
 
     var isMobile = window.innerWidth < 768;
-    var COIN_COUNT = isMobile ? 10 : 18;
+    var COIN_COUNT = isMobile ? 8 : 18;
 
     function getRandomX() {
       if (isMobile) {
-        // On mobile, distribute 75% towards side flanks so center text remains crisp and readable
-        if (Math.random() < 0.75) {
+        // On mobile, keep the central text column crystal-clear by placing 88% on outer flanks
+        if (Math.random() < 0.88) {
           return Math.random() < 0.5 
-            ? Math.random() * (width * 0.28) 
-            : width * 0.72 + Math.random() * (width * 0.28);
+            ? Math.random() * (width * 0.22) 
+            : width * 0.78 + Math.random() * (width * 0.22);
         }
       }
       return Math.random() * (width || 800);
@@ -382,24 +382,27 @@
 
     function createCoin(customY) {
       var depth = 0.45 + Math.random() * 0.55;
-      var radius = (isMobile ? 11 + Math.random() * 9 : 13 + Math.random() * 12) * depth;
+      var radius = (isMobile ? 12 + Math.random() * 8 : 17 + Math.random() * 13) * depth;
+      var x = getRandomX();
+      var isCenterMobile = isMobile && (x > width * 0.25 && x < width * 0.75);
+      var baseOpacity = isCenterMobile ? 0.22 : (isMobile ? 0.38 + depth * 0.35 : 0.45 + depth * 0.5);
+
       return {
-        x: getRandomX(),
+        x: x,
         y: customY !== undefined ? customY : (height ? height + Math.random() * 40 : 600),
         radius: radius,
         depth: depth,
         baseVy: -(0.55 + Math.random() * 0.75) * depth,
         vy: -(0.55 + Math.random() * 0.75) * depth,
-        vx: (Math.random() - 0.5) * 0.3,
-        swayAmp: 0.4 + Math.random() * 0.8,
+        vx: (Math.random() - 0.5) * 0.25,
+        swayAmp: 0.35 + Math.random() * 0.65,
         swaySpeed: 0.015 + Math.random() * 0.02,
         swayOffset: Math.random() * Math.PI * 2,
         flipAngle: Math.random() * Math.PI * 2,
-        flipSpeed: (0.02 + Math.random() * 0.035) * (Math.random() < 0.5 ? 1 : -1),
+        flipSpeed: (0.018 + Math.random() * 0.028) * (Math.random() < 0.5 ? 1 : -1),
         tilt: (Math.random() - 0.5) * 0.35,
-        tiltSpeed: (Math.random() - 0.5) * 0.004,
-        opacity: (isMobile ? 0.3 + depth * 0.4 : 0.38 + depth * 0.48),
-        symbol: Math.random() < 0.7 ? '₪' : '✦'
+        tiltSpeed: (Math.random() - 0.5) * 0.003,
+        opacity: baseOpacity
       };
     }
 
@@ -431,7 +434,7 @@
         mini.x = originX;
         mini.vx = (Math.random() - 0.5) * 4;
         mini.vy = -(2 + Math.random() * 2);
-        mini.flipSpeed = 0.08 * (Math.random() < 0.5 ? 1 : -1);
+        mini.flipSpeed = 0.07 * (Math.random() < 0.5 ? 1 : -1);
         coins.push(mini);
       }
     }
@@ -444,76 +447,151 @@
       var flipCos = Math.cos(c.flipAngle);
       var scaleX = flipCos;
       var absScaleX = Math.abs(flipCos);
+      var isFront = flipCos >= 0;
 
       ctx.globalAlpha = c.opacity;
 
-      // 3D Coin Edge thickness when rotating
+      // 3D Bimetallic Coin Edge thickness when rotating
       var edgeWidth = c.radius * 0.16 * Math.sin(c.flipAngle);
-      if (Math.abs(edgeWidth) > 0.8 && absScaleX < 0.95) {
+      if (Math.abs(edgeWidth) > 0.6 && absScaleX < 0.96) {
         ctx.save();
         ctx.scale(scaleX, 1);
         ctx.beginPath();
-        ctx.ellipse(edgeWidth * 0.8, 0, c.radius, c.radius, 0, 0, Math.PI * 2);
-        ctx.fillStyle = '#92400E';
+        ctx.ellipse(edgeWidth * 0.85, 0, c.radius, c.radius, 0, 0, Math.PI * 2);
+        ctx.fillStyle = '#854D0E'; // Bronze outer rim edge
+        ctx.fill();
+
+        // Silver core edge slice
+        ctx.beginPath();
+        ctx.ellipse(edgeWidth * 0.85, 0, c.radius * 0.64, c.radius * 0.64, 0, 0, Math.PI * 2);
+        ctx.fillStyle = '#64748B'; // Cool steel silver edge
         ctx.fill();
         ctx.restore();
       }
 
       ctx.scale(scaleX, 1);
 
-      // Outer rim gradient
-      var rimGrad = ctx.createLinearGradient(-c.radius, -c.radius, c.radius, c.radius);
-      rimGrad.addColorStop(0, '#FDE68A');
-      rimGrad.addColorStop(0.5, '#F59E0B');
-      rimGrad.addColorStop(1, '#B45309');
+      // --- 1. OUTER GOLDEN RING (Nickel-Brass) ---
+      var goldGrad = ctx.createLinearGradient(-c.radius, -c.radius, c.radius, c.radius);
+      goldGrad.addColorStop(0, '#FEF08A');
+      goldGrad.addColorStop(0.25, '#F59E0B');
+      goldGrad.addColorStop(0.7, '#D97706');
+      goldGrad.addColorStop(1, '#854D0E');
 
       ctx.beginPath();
       ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
-      ctx.fillStyle = rimGrad;
+      ctx.fillStyle = goldGrad;
       ctx.fill();
 
-      // Outer highlight ring
-      ctx.lineWidth = Math.max(1, c.radius * 0.08);
+      // Outer rim border highlight
+      ctx.lineWidth = Math.max(1, c.radius * 0.06);
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
       ctx.stroke();
 
-      // Inner coin disc
-      var innerR = c.radius * 0.78;
-      var innerGrad = ctx.createRadialGradient(-innerR * 0.3, -innerR * 0.3, innerR * 0.1, 0, 0, innerR);
-      innerGrad.addColorStop(0, '#FBBF24');
-      innerGrad.addColorStop(0.7, '#D97706');
-      innerGrad.addColorStop(1, '#92400E');
+      // Concentric reeding groove on golden ring
+      ctx.lineWidth = Math.max(0.5, c.radius * 0.025);
+      ctx.strokeStyle = 'rgba(180, 83, 9, 0.35)';
+      ctx.beginPath();
+      ctx.arc(0, 0, c.radius * 0.84, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // --- 2. INNER SILVER CORE (Cupronickel) ---
+      var innerR = c.radius * 0.64;
+
+      // Recessed joint line between gold ring and silver core
+      ctx.beginPath();
+      ctx.arc(0, 0, innerR + 0.5, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(146, 64, 14, 0.55)';
+      ctx.lineWidth = Math.max(0.75, c.radius * 0.035);
+      ctx.stroke();
+
+      // Silver core gradient
+      var silverGrad = ctx.createLinearGradient(-innerR, -innerR, innerR, innerR);
+      silverGrad.addColorStop(0, '#FFFFFF');
+      silverGrad.addColorStop(0.22, '#F1F5F9');
+      silverGrad.addColorStop(0.55, '#CBD5E1');
+      silverGrad.addColorStop(1, '#94A3B8');
 
       ctx.beginPath();
       ctx.arc(0, 0, innerR, 0, Math.PI * 2);
-      ctx.fillStyle = innerGrad;
+      ctx.fillStyle = silverGrad;
       ctx.fill();
 
-      // Inner embossed border
-      ctx.lineWidth = Math.max(0.75, c.radius * 0.04);
-      ctx.strokeStyle = 'rgba(251, 191, 36, 0.75)';
+      // Inner silver rim bevel highlight
+      ctx.lineWidth = Math.max(0.5, c.radius * 0.03);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
       ctx.stroke();
 
-      // Center currency emblem (₪ or ✦)
-      if (absScaleX > 0.32 && c.radius > 8) {
-        ctx.fillStyle = '#78350F';
-        ctx.font = 'bold ' + Math.round(innerR * 1.05) + 'px system-ui, -apple-system, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(c.symbol, 0, 1);
+      // --- 3. DUAL-SIDED 3D FACE EMBOSSING ---
+      if (absScaleX > 0.25 && c.radius > 8) {
+        ctx.save();
+        if (isFront) {
+          // Front (Obverse): Bold 10 Numeral + شواكل
+          ctx.fillStyle = 'rgba(71, 85, 105, 0.85)';
+          ctx.font = '900 ' + Math.round(innerR * 0.95) + 'px -apple-system, BlinkMacSystemFont, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('10', 0.5, 1);
 
-        ctx.fillStyle = 'rgba(254, 243, 199, 0.6)';
-        ctx.fillText(c.symbol, -0.6, 0.4);
+          ctx.fillStyle = '#334155';
+          ctx.fillText('10', 0, 0.2);
+
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+          ctx.fillText('10', -0.5, -0.4);
+
+          if (c.radius > 15 && absScaleX > 0.45) {
+            ctx.fillStyle = '#64748B';
+            ctx.font = 'bold ' + Math.round(innerR * 0.22) + 'px sans-serif';
+            ctx.fillText('شواكل', 0, innerR * 0.55);
+          }
+        } else {
+          // Back (Reverse): Iconic Date Palm Tree Motif
+          ctx.strokeStyle = '#475569';
+          ctx.fillStyle = '#475569';
+          ctx.lineWidth = Math.max(1, c.radius * 0.05);
+          ctx.lineCap = 'round';
+
+          // Trunk
+          ctx.beginPath();
+          ctx.moveTo(0, innerR * 0.55);
+          ctx.lineTo(0, -innerR * 0.15);
+          ctx.stroke();
+
+          // Palm fronds
+          ctx.lineWidth = Math.max(0.8, c.radius * 0.04);
+          var frondR = innerR * 0.45;
+          for (var a = -0.7; a <= 0.75; a += 0.35) {
+            ctx.beginPath();
+            ctx.moveTo(0, -innerR * 0.15);
+            ctx.quadraticCurveTo(Math.sin(a) * frondR * 0.6, -innerR * 0.15 - Math.cos(a) * frondR * 0.6, Math.sin(a) * frondR, -innerR * 0.15 - Math.cos(a) * frondR * 0.35);
+            ctx.stroke();
+          }
+
+          // Two date baskets
+          ctx.beginPath();
+          ctx.arc(-innerR * 0.2, innerR * 0.05, c.radius * 0.06, 0, Math.PI * 2);
+          ctx.arc(innerR * 0.2, innerR * 0.05, c.radius * 0.06, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Highlight ridge
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+          ctx.lineWidth = Math.max(0.5, c.radius * 0.025);
+          ctx.beginPath();
+          ctx.moveTo(-0.5, innerR * 0.55);
+          ctx.lineTo(-0.5, -innerR * 0.15);
+          ctx.stroke();
+        }
+        ctx.restore();
       }
 
-      // Sweeping sheen light reflection
+      // --- 4. SWEEPING METALLIC SHEEN ---
       var sheenX = Math.sin(c.flipAngle * 2) * c.radius;
-      var sheenGrad = ctx.createLinearGradient(sheenX - c.radius * 0.4, 0, sheenX + c.radius * 0.4, 0);
+      var sheenGrad = ctx.createLinearGradient(sheenX - c.radius * 0.45, -c.radius, sheenX + c.radius * 0.45, c.radius);
       sheenGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
       sheenGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.35)');
       sheenGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
       ctx.beginPath();
-      ctx.arc(0, 0, innerR, 0, Math.PI * 2);
+      ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
       ctx.fillStyle = sheenGrad;
       ctx.fill();
 
