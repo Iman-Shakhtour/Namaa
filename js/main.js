@@ -439,10 +439,18 @@
       }
     }
 
-    var imgObverse = new Image();
-    imgObverse.src = 'assets/coin-10-obverse.webp';
-    var imgReverse = new Image();
-    imgReverse.src = 'assets/coin-10-reverse.webp';
+    function drawStar(cCtx, cx, cy, outerRadius, innerRadius, points) {
+      cCtx.beginPath();
+      for (var i = 0; i < points * 2; i++) {
+        var r = i % 2 === 0 ? outerRadius : innerRadius;
+        var a = (i * Math.PI) / points;
+        var sx = cx + Math.cos(a) * r;
+        var sy = cy + Math.sin(a) * r;
+        if (i === 0) cCtx.moveTo(sx, sy);
+        else cCtx.lineTo(sx, sy);
+      }
+      cCtx.closePath();
+    }
 
     function drawCoin(c) {
       ctx.save();
@@ -453,41 +461,147 @@
       var scaleX = flipCos;
       var absScaleX = Math.abs(flipCos);
       var isFront = flipCos >= 0;
-      var activeImg = isFront ? imgObverse : imgReverse;
 
       ctx.globalAlpha = c.opacity;
 
-      // 3D Bimetallic Coin Edge thickness when rotating
-      var edgeWidth = c.radius * 0.16 * Math.sin(c.flipAngle);
+      // 1. Soft Warm Gold Ambient Aura
+      var glowGrad = ctx.createRadialGradient(0, 0, c.radius * 0.6, 0, 0, c.radius * 1.45);
+      glowGrad.addColorStop(0, 'rgba(245, 158, 11, 0.26)');
+      glowGrad.addColorStop(0.5, 'rgba(245, 158, 11, 0.07)');
+      glowGrad.addColorStop(1, 'rgba(245, 158, 11, 0)');
+      ctx.fillStyle = glowGrad;
+      ctx.beginPath();
+      ctx.arc(0, 0, c.radius * 1.45, 0, Math.PI * 2);
+      ctx.fill();
+
+      // 2. 3D Reeded Coin Edge thickness when rotating
+      var edgeWidth = c.radius * 0.18 * Math.sin(c.flipAngle);
       if (Math.abs(edgeWidth) > 0.6 && absScaleX < 0.96) {
         ctx.save();
         ctx.scale(scaleX, 1);
+
         ctx.beginPath();
-        ctx.ellipse(edgeWidth * 0.85, 0, c.radius, c.radius, 0, 0, Math.PI * 2);
-        ctx.fillStyle = '#64748B'; // Outer steel edge
+        ctx.ellipse(edgeWidth * 0.9, 0, c.radius, c.radius, 0, 0, Math.PI * 2);
+        var edgeGrad = ctx.createLinearGradient(0, -c.radius, 0, c.radius);
+        edgeGrad.addColorStop(0, '#F59E0B');
+        edgeGrad.addColorStop(0.5, '#B45309');
+        edgeGrad.addColorStop(1, '#78350F');
+        ctx.fillStyle = edgeGrad;
         ctx.fill();
 
-        // Golden bronze core edge slice
-        ctx.beginPath();
-        ctx.ellipse(edgeWidth * 0.85, 0, c.radius * 0.65, c.radius * 0.65, 0, 0, Math.PI * 2);
-        ctx.fillStyle = '#B45309'; // Inner bronze edge
-        ctx.fill();
+        ctx.strokeStyle = 'rgba(254, 240, 138, 0.45)';
+        ctx.lineWidth = Math.max(0.75, c.radius * 0.03);
+        for (var step = -c.radius * 0.85; step <= c.radius * 0.85; step += c.radius * 0.18) {
+          ctx.beginPath();
+          ctx.moveTo(edgeWidth * 0.9 - c.radius * 0.05, step);
+          ctx.lineTo(edgeWidth * 0.9 + c.radius * 0.05, step);
+          ctx.stroke();
+        }
+
         ctx.restore();
       }
 
       ctx.scale(scaleX, 1);
 
-      // Draw real 10 Shekel coin photo (front 10 side or back palm tree side)
-      if (activeImg.complete && activeImg.naturalWidth > 0) {
-        ctx.drawImage(activeImg, -c.radius, -c.radius, c.radius * 2, c.radius * 2);
+      // 3. Pure 24K Polished Gold Outer Rim
+      var rimGrad = ctx.createLinearGradient(-c.radius, -c.radius, c.radius, c.radius);
+      rimGrad.addColorStop(0, '#FFFBEB');
+      rimGrad.addColorStop(0.18, '#FEF08A');
+      rimGrad.addColorStop(0.45, '#F59E0B');
+      rimGrad.addColorStop(0.8, '#D97706');
+      rimGrad.addColorStop(1, '#92400E');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
+      ctx.fillStyle = rimGrad;
+      ctx.fill();
+
+      ctx.lineWidth = Math.max(1, c.radius * 0.07);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.65)';
+      ctx.stroke();
+
+      // 4. Bullion Pearl Beads Ring
+      var beadRadius = c.radius * 0.84;
+      var numBeads = Math.max(20, Math.round(c.radius * 1.4));
+      ctx.fillStyle = 'rgba(254, 243, 199, 0.9)';
+      var beadSize = Math.max(0.75, c.radius * 0.035);
+      for (var b = 0; b < numBeads; b++) {
+        var bAngle = (b * Math.PI * 2) / numBeads;
+        var bx = Math.cos(bAngle) * beadRadius;
+        var by = Math.sin(bAngle) * beadRadius;
+        ctx.beginPath();
+        ctx.arc(bx, by, beadSize, 0, Math.PI * 2);
+        ctx.fill();
       }
 
-      // Sweeping metallic sheen reflection
+      // 5. Sunburst Gold Field (The Coin Table)
+      var innerR = c.radius * 0.76;
+      var fieldGrad = ctx.createRadialGradient(-innerR * 0.25, -innerR * 0.25, innerR * 0.1, 0, 0, innerR);
+      fieldGrad.addColorStop(0, '#FEF08A');
+      fieldGrad.addColorStop(0.35, '#FBBF24');
+      fieldGrad.addColorStop(0.7, '#D97706');
+      fieldGrad.addColorStop(1, '#92400E');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, innerR, 0, Math.PI * 2);
+      ctx.fillStyle = fieldGrad;
+      ctx.fill();
+
+      ctx.lineWidth = Math.max(0.6, c.radius * 0.03);
+      ctx.strokeStyle = 'rgba(254, 240, 138, 0.85)';
+      ctx.stroke();
+
+      // 6. High-Relief Embossed Emblem (Front: ₪ / Back: Royal 8-point Gold Star)
+      if (absScaleX > 0.25 && c.radius > 8) {
+        ctx.save();
+        if (!isFront) {
+          ctx.scale(-1, 1);
+        }
+
+        if (isFront) {
+          var fontSize = Math.round(innerR * 1.05);
+          ctx.font = 'bold ' + fontSize + 'px system-ui, -apple-system, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+
+          ctx.fillStyle = 'rgba(120, 53, 15, 0.9)';
+          ctx.fillText('₪', 0.8, 1.4);
+
+          ctx.fillStyle = '#78350F';
+          ctx.fillText('₪', 0, 0.4);
+
+          ctx.fillStyle = '#FDE68A';
+          ctx.fillText('₪', -0.4, -0.4);
+
+          ctx.fillStyle = '#FFFBEB';
+          ctx.fillText('₪', -0.8, -0.8);
+        } else {
+          var starR = innerR * 0.65;
+          ctx.fillStyle = 'rgba(120, 53, 15, 0.9)';
+          drawStar(ctx, 0.8, 1.2, starR, starR * 0.45, 8);
+          ctx.fill();
+
+          ctx.fillStyle = '#FDE68A';
+          drawStar(ctx, -0.4, -0.4, starR, starR * 0.45, 8);
+          ctx.fill();
+
+          ctx.fillStyle = '#FFFBEB';
+          ctx.beginPath();
+          ctx.arc(-0.4, -0.4, starR * 0.2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      // 7. Dynamic Anisotropic Sheen / Gleam
       var sheenX = Math.sin(c.flipAngle * 2) * c.radius;
       var sheenGrad = ctx.createLinearGradient(sheenX - c.radius * 0.45, -c.radius, sheenX + c.radius * 0.45, c.radius);
       sheenGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
-      sheenGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.32)');
+      sheenGrad.addColorStop(0.35, 'rgba(255, 255, 255, 0.1)');
+      sheenGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.45)');
+      sheenGrad.addColorStop(0.65, 'rgba(255, 255, 255, 0.1)');
       sheenGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
       ctx.beginPath();
       ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
       ctx.fillStyle = sheenGrad;
