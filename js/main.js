@@ -382,10 +382,10 @@
 
     function createCoin(customY) {
       var depth = 0.45 + Math.random() * 0.55;
-      var radius = (isMobile ? 12 + Math.random() * 8 : 17 + Math.random() * 13) * depth;
+      var radius = (isMobile ? 15 + Math.random() * 9 : 20 + Math.random() * 14) * depth;
       var x = getRandomX();
       var isCenterMobile = isMobile && (x > width * 0.25 && x < width * 0.75);
-      var baseOpacity = isCenterMobile ? 0.22 : (isMobile ? 0.38 + depth * 0.35 : 0.45 + depth * 0.5);
+      var baseOpacity = isCenterMobile ? 0.28 : (isMobile ? 0.5 + depth * 0.4 : 0.68 + depth * 0.3);
 
       return {
         x: x,
@@ -439,6 +439,11 @@
       }
     }
 
+    var imgObverse = new Image();
+    imgObverse.src = 'assets/coin-10-obverse.webp';
+    var imgReverse = new Image();
+    imgReverse.src = 'assets/coin-10-reverse.webp';
+
     function drawCoin(c) {
       ctx.save();
       ctx.translate(c.x, c.y);
@@ -448,6 +453,7 @@
       var scaleX = flipCos;
       var absScaleX = Math.abs(flipCos);
       var isFront = flipCos >= 0;
+      var activeImg = isFront ? imgObverse : imgReverse;
 
       ctx.globalAlpha = c.opacity;
 
@@ -458,137 +464,29 @@
         ctx.scale(scaleX, 1);
         ctx.beginPath();
         ctx.ellipse(edgeWidth * 0.85, 0, c.radius, c.radius, 0, 0, Math.PI * 2);
-        ctx.fillStyle = '#854D0E'; // Bronze outer rim edge
+        ctx.fillStyle = '#64748B'; // Outer steel edge
         ctx.fill();
 
-        // Silver core edge slice
+        // Golden bronze core edge slice
         ctx.beginPath();
-        ctx.ellipse(edgeWidth * 0.85, 0, c.radius * 0.64, c.radius * 0.64, 0, 0, Math.PI * 2);
-        ctx.fillStyle = '#64748B'; // Cool steel silver edge
+        ctx.ellipse(edgeWidth * 0.85, 0, c.radius * 0.65, c.radius * 0.65, 0, 0, Math.PI * 2);
+        ctx.fillStyle = '#B45309'; // Inner bronze edge
         ctx.fill();
         ctx.restore();
       }
 
       ctx.scale(scaleX, 1);
 
-      // --- 1. OUTER GOLDEN RING (Nickel-Brass) ---
-      var goldGrad = ctx.createLinearGradient(-c.radius, -c.radius, c.radius, c.radius);
-      goldGrad.addColorStop(0, '#FEF08A');
-      goldGrad.addColorStop(0.25, '#F59E0B');
-      goldGrad.addColorStop(0.7, '#D97706');
-      goldGrad.addColorStop(1, '#854D0E');
-
-      ctx.beginPath();
-      ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
-      ctx.fillStyle = goldGrad;
-      ctx.fill();
-
-      // Outer rim border highlight
-      ctx.lineWidth = Math.max(1, c.radius * 0.06);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
-      ctx.stroke();
-
-      // Concentric reeding groove on golden ring
-      ctx.lineWidth = Math.max(0.5, c.radius * 0.025);
-      ctx.strokeStyle = 'rgba(180, 83, 9, 0.35)';
-      ctx.beginPath();
-      ctx.arc(0, 0, c.radius * 0.84, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // --- 2. INNER SILVER CORE (Cupronickel) ---
-      var innerR = c.radius * 0.64;
-
-      // Recessed joint line between gold ring and silver core
-      ctx.beginPath();
-      ctx.arc(0, 0, innerR + 0.5, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(146, 64, 14, 0.55)';
-      ctx.lineWidth = Math.max(0.75, c.radius * 0.035);
-      ctx.stroke();
-
-      // Silver core gradient
-      var silverGrad = ctx.createLinearGradient(-innerR, -innerR, innerR, innerR);
-      silverGrad.addColorStop(0, '#FFFFFF');
-      silverGrad.addColorStop(0.22, '#F1F5F9');
-      silverGrad.addColorStop(0.55, '#CBD5E1');
-      silverGrad.addColorStop(1, '#94A3B8');
-
-      ctx.beginPath();
-      ctx.arc(0, 0, innerR, 0, Math.PI * 2);
-      ctx.fillStyle = silverGrad;
-      ctx.fill();
-
-      // Inner silver rim bevel highlight
-      ctx.lineWidth = Math.max(0.5, c.radius * 0.03);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
-      ctx.stroke();
-
-      // --- 3. DUAL-SIDED 3D FACE EMBOSSING ---
-      if (absScaleX > 0.25 && c.radius > 8) {
-        ctx.save();
-        if (isFront) {
-          // Front (Obverse): Bold 10 Numeral + شواكل
-          ctx.fillStyle = 'rgba(71, 85, 105, 0.85)';
-          ctx.font = '900 ' + Math.round(innerR * 0.95) + 'px -apple-system, BlinkMacSystemFont, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText('10', 0.5, 1);
-
-          ctx.fillStyle = '#334155';
-          ctx.fillText('10', 0, 0.2);
-
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-          ctx.fillText('10', -0.5, -0.4);
-
-          if (c.radius > 15 && absScaleX > 0.45) {
-            ctx.fillStyle = '#64748B';
-            ctx.font = 'bold ' + Math.round(innerR * 0.22) + 'px sans-serif';
-            ctx.fillText('شواكل', 0, innerR * 0.55);
-          }
-        } else {
-          // Back (Reverse): Iconic Date Palm Tree Motif
-          ctx.strokeStyle = '#475569';
-          ctx.fillStyle = '#475569';
-          ctx.lineWidth = Math.max(1, c.radius * 0.05);
-          ctx.lineCap = 'round';
-
-          // Trunk
-          ctx.beginPath();
-          ctx.moveTo(0, innerR * 0.55);
-          ctx.lineTo(0, -innerR * 0.15);
-          ctx.stroke();
-
-          // Palm fronds
-          ctx.lineWidth = Math.max(0.8, c.radius * 0.04);
-          var frondR = innerR * 0.45;
-          for (var a = -0.7; a <= 0.75; a += 0.35) {
-            ctx.beginPath();
-            ctx.moveTo(0, -innerR * 0.15);
-            ctx.quadraticCurveTo(Math.sin(a) * frondR * 0.6, -innerR * 0.15 - Math.cos(a) * frondR * 0.6, Math.sin(a) * frondR, -innerR * 0.15 - Math.cos(a) * frondR * 0.35);
-            ctx.stroke();
-          }
-
-          // Two date baskets
-          ctx.beginPath();
-          ctx.arc(-innerR * 0.2, innerR * 0.05, c.radius * 0.06, 0, Math.PI * 2);
-          ctx.arc(innerR * 0.2, innerR * 0.05, c.radius * 0.06, 0, Math.PI * 2);
-          ctx.fill();
-
-          // Highlight ridge
-          ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
-          ctx.lineWidth = Math.max(0.5, c.radius * 0.025);
-          ctx.beginPath();
-          ctx.moveTo(-0.5, innerR * 0.55);
-          ctx.lineTo(-0.5, -innerR * 0.15);
-          ctx.stroke();
-        }
-        ctx.restore();
+      // Draw real 10 Shekel coin photo (front 10 side or back palm tree side)
+      if (activeImg.complete && activeImg.naturalWidth > 0) {
+        ctx.drawImage(activeImg, -c.radius, -c.radius, c.radius * 2, c.radius * 2);
       }
 
-      // --- 4. SWEEPING METALLIC SHEEN ---
+      // Sweeping metallic sheen reflection
       var sheenX = Math.sin(c.flipAngle * 2) * c.radius;
       var sheenGrad = ctx.createLinearGradient(sheenX - c.radius * 0.45, -c.radius, sheenX + c.radius * 0.45, c.radius);
       sheenGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
-      sheenGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.35)');
+      sheenGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.32)');
       sheenGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
       ctx.beginPath();
       ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
