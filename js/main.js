@@ -10,6 +10,22 @@
   document.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 
+  /* Floating WhatsApp button: one shared entry point, built from the approved number in site-config.js. */
+  (function () {
+    var config = window.SITE_CONFIG || {};
+    var number = (config.whatsappNumber || '').replace(/[^0-9]/g, '');
+    if (!number) return;
+    var message = 'مرحباً، أريد معرفة المزيد عن نماء';
+    var link = document.createElement('a');
+    link.className = 'whatsapp-float';
+    link.href = 'https://wa.me/' + number + '?text=' + encodeURIComponent(message);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', 'تواصل مع نماء عبر واتساب');
+    link.innerHTML = '<svg aria-hidden="true"><use href="#icon-whatsapp"/></svg>';
+    document.body.appendChild(link);
+  })();
+
   var hamburger = document.querySelector('.hamburger');
   var mobilePanel = document.getElementById('mobile-panel');
   function closeMenu(restoreFocus) {
@@ -77,6 +93,58 @@
     });
   }
 
+  /* Mobile product showcase: a single scrollable tab row switches one panel (title, description, zoomable image). */
+  var storyTabs = Array.from(document.querySelectorAll('[data-story-mobile-index]'));
+  var storyPanel = document.querySelector('[data-story-mobile-panel]');
+  if (storyTabs.length && storyPanel) {
+    var panelTitle = storyPanel.querySelector('[data-story-mobile-title]');
+    var panelDesc = storyPanel.querySelector('[data-story-mobile-desc]');
+    var panelImage = storyPanel.querySelector('[data-story-mobile-image]');
+    var panelFrame = storyPanel.querySelector('.story-panel__frame');
+
+    function setMobileStory(index, options) {
+      var moveFocus = options && options.focus;
+      var activeTab = null;
+      storyTabs.forEach(function (tab, position) {
+        var active = position === index;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+        if (active) activeTab = tab;
+      });
+      if (!activeTab) return;
+      if (panelTitle) panelTitle.textContent = activeTab.dataset.title;
+      if (panelDesc) panelDesc.textContent = activeTab.dataset.desc;
+      if (panelImage) {
+        panelImage.src = activeTab.dataset.img;
+        panelImage.alt = activeTab.dataset.alt;
+      }
+      if (panelFrame) {
+        panelFrame.dataset.zoom = activeTab.dataset.img;
+        panelFrame.dataset.title = activeTab.dataset.title + ' في نماء';
+        panelFrame.setAttribute('aria-label', 'تكبير شاشة ' + activeTab.dataset.title);
+      }
+      storyPanel.setAttribute('aria-labelledby', activeTab.id);
+      if (moveFocus) activeTab.focus();
+    }
+
+    storyTabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () { setMobileStory(index); });
+      tab.addEventListener('keydown', function (event) {
+        var lastIndex = storyTabs.length - 1;
+        var nextIndex = null;
+        if (event.key === 'ArrowRight') nextIndex = index === 0 ? lastIndex : index - 1;
+        else if (event.key === 'ArrowLeft') nextIndex = index === lastIndex ? 0 : index + 1;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = lastIndex;
+        if (nextIndex !== null) {
+          event.preventDefault();
+          setMobileStory(nextIndex, { focus: true });
+        }
+      });
+    });
+  }
+
   /* Hardware: show 4 products initially with expand/collapse toggle. */
   function trustedProductUrl(value) {
     try {
@@ -88,9 +156,15 @@
   var hardware = (window.HARDWARE_PRODUCTS || []).filter(function (product) {
     return product.approved === true;
   });
-  var INITIAL_VISIBLE = 4;
+  if (rail) {
+    var emptyNote = document.getElementById('hardware-empty');
+    if (!hardware.length && emptyNote) emptyNote.hidden = false;
+  }
   if (rail && hardware.length) {
-    /* Build all cards */
+    /* The dedicated hardware page lists everything; other pages collapse past the fourth card. */
+    var showAll = rail.dataset.showAll === 'true';
+    var INITIAL_VISIBLE = showAll ? hardware.length : 4;
+
     hardware.forEach(function (product, index) {
       var article = document.createElement('article');
       article.className = 'hardware-card';
@@ -101,11 +175,11 @@
       var imageWrap = document.createElement('div');
       imageWrap.className = 'hardware-card__img-wrap';
       var image = document.createElement('img');
-      image.src = product.sourceImageUrl || product.image;
+      image.src = product.image;
       image.width = product.width;
       image.height = product.height;
       image.alt = product.name;
-      image.loading = index < INITIAL_VISIBLE ? 'eager' : 'lazy';
+      image.loading = index < 4 ? 'eager' : 'lazy';
       image.decoding = 'async';
       imageWrap.appendChild(image);
       var copy = document.createElement('div');
@@ -162,7 +236,7 @@
           ? 'عرض أقل'
           : 'عرض ' + remaining + ' منتج إضافي';
         if (!expanded) {
-          rail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          rail.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'nearest' });
         }
       });
       expandWrap.appendChild(expandBtn);
@@ -178,8 +252,9 @@
     } catch (_) { return false; }
   });
   var template = document.getElementById('tutorials-template');
-  var faq = document.getElementById('faq');
-  if (tutorials.length && template && faq) {
+  /* Insert before the FAQ when present, otherwise before the closing call to action. */
+  var tutorialsAnchor = document.getElementById('faq') || document.querySelector('.final-cta');
+  if (tutorials.length && template && tutorialsAnchor) {
     var section = template.content.firstElementChild.cloneNode(true);
     tutorials.forEach(function (tutorial) {
       var card = document.createElement('article');
@@ -197,7 +272,7 @@
       card.append(title, description, watch);
       section.querySelector('.tutorials-grid').appendChild(card);
     });
-    faq.before(section);
+    tutorialsAnchor.before(section);
   }
 
   var dialog = document.getElementById('screenshot-dialog');
@@ -271,33 +346,53 @@
     if (spotsNum) spotsNum.textContent = launchCard.dataset.spotsRemaining;
   }
 
-  /* The year-end offer uses one public deadline for everyone. */
-  var countdown = document.querySelector('[data-offer-deadline]');
+  /*
+   * Offer countdown — single source of truth.
+   * OFFER_DEADLINE_ISO is the ONE confirmed end date/time for the current offer, in the
+   * Asia/Hebron timezone. It is not yet confirmed, so it stays null and the countdown
+   * block is hidden everywhere rather than showing a placeholder or invented date.
+   *
+   * When the business confirms a date: set OFFER_DEADLINE_ISO to an ISO string with the
+   * correct Asia/Hebron UTC offset for that time of year (Palestine observes DST:
+   * roughly +03:00 in spring/summer, +02:00 in autumn/winter — check the exact
+   * transition dates for the target year before publishing). Example:
+   *   var OFFER_DEADLINE_ISO = '2026-12-31T23:59:59+02:00';
+   * The same value then drives both the visible deadline text and the live countdown
+   * for every visitor — it is never randomized or reset per session.
+   */
+  var OFFER_DEADLINE_ISO = null;
+
+  var countdown = document.querySelector('[data-offer-countdown]');
   if (countdown) {
-    var deadline = new Date(countdown.dataset.offerDeadline).getTime();
-    var timer;
-    function updateCountdown() {
-      var remaining = deadline - Date.now();
-      if (remaining <= 0) {
-        countdown.classList.add('is-ended');
-        countdown.textContent = 'انتهى عرض آخر السنة';
-        if (timer) window.clearInterval(timer);
-        return;
+    if (!OFFER_DEADLINE_ISO) {
+      /* No confirmed date yet: hide the whole countdown widget, not just the numbers. */
+      countdown.hidden = true;
+    } else {
+      var deadline = new Date(OFFER_DEADLINE_ISO).getTime();
+      var timer;
+      function updateCountdown() {
+        var remaining = deadline - Date.now();
+        if (remaining <= 0) {
+          countdown.classList.add('is-ended');
+          countdown.textContent = 'انتهى عرض آخر السنة';
+          if (timer) window.clearInterval(timer);
+          return;
+        }
+        var units = {
+          days: Math.floor(remaining / 86400000),
+          hours: Math.floor((remaining % 86400000) / 3600000),
+          minutes: Math.floor((remaining % 3600000) / 60000),
+          seconds: Math.floor((remaining % 60000) / 1000)
+        };
+        Object.keys(units).forEach(function (unit) {
+          var node = countdown.querySelector('[data-' + unit + ']');
+          if (node) node.textContent = String(units[unit]).padStart(2, '0');
+        });
+        countdown.setAttribute('aria-label', 'متبقي ' + units.days + ' يوم و' + units.hours + ' ساعة على نهاية العرض');
       }
-      var units = {
-        days: Math.floor(remaining / 86400000),
-        hours: Math.floor((remaining % 86400000) / 3600000),
-        minutes: Math.floor((remaining % 3600000) / 60000),
-        seconds: Math.floor((remaining % 60000) / 1000)
-      };
-      Object.keys(units).forEach(function (unit) {
-        var node = countdown.querySelector('[data-' + unit + ']');
-        if (node) node.textContent = String(units[unit]).padStart(2, '0');
-      });
-      countdown.setAttribute('aria-label', 'متبقي ' + units.days + ' يوم و' + units.hours + ' ساعة على نهاية العرض');
+      updateCountdown();
+      timer = window.setInterval(updateCountdown, 1000);
     }
-    updateCountdown();
-    timer = window.setInterval(updateCountdown, 1000);
   }
 
   /* Interactive Cursor Spotlight Effects (Hardware-accelerated, disabled on touch/reduced-motion) */
