@@ -431,6 +431,24 @@
         card.style.setProperty('--mouse-y', y + 'px');
       });
     });
+
+    /* Scroll-reveal: fires only on mobile screens */
+    if (whyCards.length && !reduceMotion.matches && 'IntersectionObserver' in window) {
+      var cardObserver = new IntersectionObserver(function (entries) {
+        if (window.innerWidth > 639) return; /* desktop: skip, use normal :hover */
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('is-in-view'); /* reset so animation replays */
+            void entry.target.offsetWidth;              /* force reflow */
+            entry.target.classList.add('is-in-view');
+          } else {
+            entry.target.classList.remove('is-in-view');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+
+      whyCards.forEach(function (card) { cardObserver.observe(card); });
+    }
   }
 
   /* 3. Lightweight Interactive Gold Coins Canvas (<3.5KB, 0 dependencies, auto-paused offscreen) */
