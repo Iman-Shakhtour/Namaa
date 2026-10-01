@@ -14,3 +14,4 @@ assets/coin-10-reverse.png
 scratch/
 temp/
 .vercel
+.env*
