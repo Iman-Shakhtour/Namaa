@@ -1,4 +1,4 @@
-/* Verified against Logix Mobile product pages on 2026-09-21. Prices and specs are separate from Namaa subscriptions. */
+/* Verified against the Logix Mobile POS catalog on 2026-10-11. Prices and specs are separate from Namaa subscriptions. */
 window.HARDWARE_PRODUCTS = Object.freeze([
   {
     "id": "wired-scanner",
@@ -99,10 +99,10 @@ window.HARDWARE_PRODUCTS = Object.freeze([
   {
     "id": "thermal-paper",
     "image": "assets/hardware/thermal-paper.webp",
-    "width": 548,
-    "height": 640,
+    "width": 1080,
+    "height": 1350,
     "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786616653",
-    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260817_39aa15b7223496de.webp?v=1786952054",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260817_90517688499c69e6.webp?v=1786952190",
     "name": "رول ورق حراري للفواتير",
     "description": "ورق حراري لطباعة الفواتير.",
     "details": "رول ورق حراري مخصص لطابعات الفواتير ونقاط البيع (مقاس 80 مم)، يوفر طباعة واضحة ودقيقة وسريعة بدون الحاجة إلى حبر. مناسب للمحلات، نقاط الكاشير، المطاعم والمكاتب، ويتميز بنعومة وجودة عالية تحافظ على رأس الطباعة وتضمن ثبات النصوص.",
@@ -132,12 +132,44 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "featured": false
   },
   {
+    "id": "adhesive-roll",
+    "image": "assets/hardware/adhesive-roll.webp",
+    "width": 768,
+    "height": 1024,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786952690",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260817_99a56530911ecb21.webp?v=1786952690",
+    "name": "لاصق رول",
+    "description": "رول لاصق شفاف.",
+    "details": "رول لاصق شفاف لتغليف الطرود والعبوات.",
+    "price": 5,
+    "currency": "NIS",
+    "approved": true,
+    "approvedPrice": true,
+    "featured": false
+  },
+  {
+    "id": "scale-labels",
+    "image": "assets/hardware/scale-labels.webp",
+    "width": 1080,
+    "height": 1350,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786953291",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260817_cd08c7fc7998a649.webp?v=1786953291",
+    "name": "ليبل ميزان",
+    "description": "رول ملصقات بمقاس 60 × 40 مم.",
+    "details": "رول ملصقات للميزان بمقاس 60 × 40 مم.",
+    "price": 15,
+    "currency": "NIS",
+    "approved": true,
+    "approvedPrice": true,
+    "featured": false
+  },
+  {
     "id": "xprinter-n160ii",
     "image": "assets/hardware/xprinter-n160ii.webp",
-    "width": 480,
-    "height": 640,
+    "width": 1050,
+    "height": 1400,
     "sourceUrl": "https://logix-mobile.com/product.php?slug=product-1786868629",
-    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_e33100f7ff7f31f9.webp?v=1786868147",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_da40f89e9b440bd0.webp?v=1786868582",
     "name": "طابعة فواتير Xprinter XP-N160II",
     "description": "طابعة حرارية للفواتير والإيصالات.",
     "details": "طابعة مدمجة وسريعة تعتمد على الحرارة لطباعة الفواتير دون حبر. تدعم ورق مقاس 80 مم ومزودة بقاطع آلي، وتُستخدم بشكل أساسي في نقاط البيع والكاشير بالمحلات والمطاعم.",
@@ -145,7 +177,38 @@ window.HARDWARE_PRODUCTS = Object.freeze([
     "currency": "NIS",
     "approved": true,
     "approvedPrice": true,
-    "featured": true,
-    "alternateSourceUrl": "https://logix-mobile.com/product.php?slug=xprinter-xp-n160ii"
+    "featured": true
+  },
+  {
+    "id": "xprinter-n160ii-480",
+    "image": "assets/hardware/xprinter-n160ii-480.webp",
+    "width": 1050,
+    "height": 1400,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=xprinter-xp-n160ii",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260816_e33100f7ff7f31f9.webp?v=1786868147",
+    "name": "Xprinter (طراز XP-N160II)",
+    "description": "طابعة حرارية للفواتير والإيصالات.",
+    "details": "طابعة حرارية لطباعة الفواتير والإيصالات.",
+    "price": 480,
+    "currency": "NIS",
+    "approved": true,
+    "approvedPrice": true,
+    "featured": false
+  },
+  {
+    "id": "cash-drawer-5",
+    "image": "assets/hardware/cash-drawer-5.webp",
+    "width": 1080,
+    "height": 808,
+    "sourceUrl": "https://logix-mobile.com/product.php?slug=5",
+    "sourceImageUrl": "https://logix-mobile.com/uploads/products/20260818_c4f2b1a38c83dd85.webp?v=1787043419",
+    "name": "درج كاش 5 خانات",
+    "description": "درج نقود معدني بخمس خانات.",
+    "details": "درج كاش معدني متين بخمس خانات، مع إمكانية ربطه بنظام المبيعات بحسب وصف المتجر.",
+    "price": 150,
+    "currency": "NIS",
+    "approved": true,
+    "approvedPrice": true,
+    "featured": false
   }
 ].map(function (product) { return Object.freeze(product); }));
