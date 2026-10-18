@@ -182,6 +182,36 @@
       image.loading = index < 4 ? 'eager' : 'lazy';
       image.decoding = 'async';
       imageWrap.appendChild(image);
+      if (Array.isArray(product.images) && product.images.length > 1) {
+        var gallery = document.createElement('div');
+        gallery.className = 'hardware-gallery';
+        gallery.setAttribute('role', 'group');
+        gallery.setAttribute('aria-label', 'صور ' + product.name);
+        product.images.forEach(function (view, viewIndex) {
+          var button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'hardware-gallery__button';
+          button.setAttribute('aria-label', 'عرض صورة ' + view.label + ' لـ ' + product.name);
+          button.setAttribute('aria-pressed', String(viewIndex === 0));
+          var thumbnail = document.createElement('img');
+          thumbnail.src = view.src;
+          thumbnail.alt = '';
+          thumbnail.width = 64;
+          thumbnail.height = 64;
+          thumbnail.loading = 'lazy';
+          button.appendChild(thumbnail);
+          button.addEventListener('click', function () {
+            image.src = view.src;
+            image.alt = product.name + ' — ' + view.label;
+            gallery.querySelectorAll('button').forEach(function (item) {
+              item.setAttribute('aria-pressed', String(item === button));
+            });
+          });
+          gallery.appendChild(button);
+        });
+        imageWrap.appendChild(gallery);
+        image.alt = product.name + ' — ' + product.images[0].label;
+      }
       var copy = document.createElement('div');
       copy.className = 'hardware-card__copy';
       var title = document.createElement('h3');
@@ -195,9 +225,11 @@
       }
       var details = document.createElement('details');
       details.className = 'hardware-details';
+      if (product.showSpecs === true) details.open = true;
       var summary = document.createElement('summary');
       summary.className = 'hardware-details__summary';
       summary.innerHTML = '<span>عرض المواصفات</span><svg class="hardware-details__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+      if (details.open) summary.querySelector('span').textContent = 'إخفاء المواصفات';
       var desc = document.createElement('p');
       desc.className = 'hardware-details__text';
       desc.textContent = product.details || product.description;
