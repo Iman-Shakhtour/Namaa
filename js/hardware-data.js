@@ -1,6 +1,26 @@
 /* Verified against the Logix Mobile POS catalog on 2026-10-11. Prices and specs are separate from Namaa subscriptions. */
 window.HARDWARE_PRODUCTS = Object.freeze([
   {
+    "id": "imachine-p1",
+    "image": "assets/hardware/imachine-front.webp",
+    "width": 1200,
+    "height": 950,
+    "images": [
+      { "src": "assets/hardware/imachine-front.webp", "label": "الأمام" },
+      { "src": "assets/hardware/imachine-side.webp", "label": "الجانب" },
+      { "src": "assets/hardware/imachine-back.webp", "label": "الخلف" }
+    ],
+    "name": "جهاز نقطة بيع iMACHINE P1",
+    "description": "شاشة 15.6 بوصة بدقة Full HD مع تخزين SSD.",
+    "details": "الموديل: iMACHINE P1. شاشة 15.6 بوصة بدقة 1920 × 1080، معالج Intel J6412، ذاكرة 8 GB RAM، تخزين 256 GB SSD، اتصال Wi-Fi وBluetooth، وسماعة مدمجة.",
+    "price": 2000,
+    "currency": "NIS",
+    "approved": true,
+    "approvedPrice": true,
+    "featured": true,
+    "showSpecs": true
+  },
+  {
     "id": "wired-scanner",
     "image": "assets/hardware/wired-scanner.webp",
     "width": 480,
